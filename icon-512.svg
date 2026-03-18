@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" rx="100" fill="#0a0a0a"/>
+  <rect x="40" y="40" width="432" height="432" rx="72" fill="#111111"/>
+  <!-- Lightning bolt -->
+  <path d="M288 64 L170 268 L240 268 L224 448 L342 232 L272 232 Z" fill="#c8f564"/>
+  <!-- Accent circles -->
+  <circle cx="390" cy="116" r="28" fill="#c8f564" opacity="0.35"/>
+  <circle cx="122" cy="390" r="16" fill="#c8f564" opacity="0.2"/>
+</svg>
