@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
-  <rect width="192" height="192" rx="40" fill="#0a0a0a"/>
-  <rect x="16" y="16" width="160" height="160" rx="28" fill="#111111"/>
-  <!-- Lightning bolt / body silhouette stylized -->
-  <path d="M108 24 L64 100 L90 100 L84 168 L128 88 L102 88 Z" fill="#c8f564"/>
-  <!-- Small dot accent -->
-  <circle cx="148" cy="44" r="10" fill="#c8f564" opacity="0.4"/>
-</svg>
