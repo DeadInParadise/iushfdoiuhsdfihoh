@@ -4,394 +4,331 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="theme-color" content="#0a0a0a"/>
-<meta name="description" content="12-week progressive transformation plan — training, nutrition, skincare, hair."/>
+<meta name="description" content="12-month progressive transformation plan — training, nutrition, skincare, hair."/>
 <link rel="manifest" href="manifest.json"/>
 <link rel="icon" type="image/svg+xml" href="icon-192.svg"/>
-<title>Transformation Plan — 12 Weeks</title>
+<title>Transformation Plan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-:root {
-  --bg: #0a0a0a;
-  --bg2: #111111;
-  --bg3: #1a1a1a;
-  --bg4: #222222;
-  --border: rgba(255,255,255,0.08);
-  --border2: rgba(255,255,255,0.14);
-  --accent: #c8f564;
-  --accent2: #a8d444;
-  --text: #f0ede8;
-  --muted: #888880;
-  --muted2: #555550;
-  --push: #64b5f6;
-  --pull: #81c784;
-  --rest: #888880;
-  --skill: #ffb74d;
-  --danger: #ef5350;
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-mono: 'DM Mono', monospace;
-  --r: 10px;
-  --r-lg: 16px;
+:root{
+  --bg:#080808;--bg2:#111;--bg3:#181818;--bg4:#222;
+  --border:rgba(255,255,255,0.07);--border2:rgba(255,255,255,0.13);
+  --accent:#c8f564;--accent2:#a8d444;--accent-dim:rgba(200,245,100,0.08);
+  --text:#eeebe5;--muted:#888880;--muted2:#444440;
+  --push:#64b5f6;--pull:#81c784;--skill:#ffb74d;--danger:#ef5350;
+  --fd:'Bebas Neue',sans-serif;--fb:'DM Sans',sans-serif;--fm:'DM Mono',monospace;
+  --r:10px;--rl:16px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.6;min-height:100vh;overflow-x:hidden}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{width:4px}
+body{background:var(--bg);color:var(--text);font-family:var(--fb);font-size:15px;line-height:1.65;overflow-x:hidden}
+::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:var(--bg)}
-::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:4px}
+::-webkit-scrollbar-thumb{background:var(--bg4);border-radius:3px}
 
-/* ─── HERO ─── */
+/* ── HERO ── */
 .hero{
-  position:relative;min-height:100vh;display:flex;flex-direction:column;
-  justify-content:flex-end;padding:3rem 2rem 2.5rem;overflow:hidden;
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:6rem 2.5rem 4rem;position:relative;overflow:hidden;
 }
-.hero-bg{
+.hero-noise{
   position:absolute;inset:0;
-  background:radial-gradient(ellipse 80% 60% at 70% 20%, rgba(200,245,100,0.07) 0%, transparent 65%),
-             radial-gradient(ellipse 50% 50% at 20% 80%, rgba(100,181,246,0.05) 0%, transparent 60%);
+  background-image:radial-gradient(circle at 75% 25%, rgba(200,245,100,0.06) 0%, transparent 50%),
+                   radial-gradient(circle at 20% 70%, rgba(100,181,246,0.04) 0%, transparent 45%);
 }
-.hero-grid{
+.hero-lines{
   position:absolute;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-                   linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-  background-size:40px 40px;
-  mask-image:radial-gradient(ellipse 100% 100% at 50% 0%, black 40%, transparent 100%);
+  background-image:linear-gradient(rgba(255,255,255,0.02) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 90% 80% at 50% 10%,black 30%,transparent 100%);
 }
-.hero-stats{
-  position:absolute;top:2rem;right:2rem;
-  display:flex;flex-direction:column;gap:8px;text-align:right;
+.hero-inner{position:relative;z-index:1;max-width:800px}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:8px;margin-bottom:2.5rem;
+  background:rgba(200,245,100,0.08);border:1px solid rgba(200,245,100,0.2);
+  color:var(--accent);font-size:11px;font-weight:500;letter-spacing:.14em;
+  text-transform:uppercase;padding:7px 16px;border-radius:100px;
 }
-.hero-stat-val{font-family:var(--font-display);font-size:2.2rem;color:var(--accent);line-height:1}
-.hero-stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
-.hero-badge{
-  display:inline-flex;align-items:center;gap:8px;
-  background:rgba(200,245,100,0.1);border:1px solid rgba(200,245,100,0.25);
-  color:var(--accent);font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;
-  padding:6px 14px;border-radius:100px;margin-bottom:1.5rem;width:fit-content;
-}
-.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero-pill-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 .hero h1{
-  font-family:var(--font-display);font-size:clamp(4rem,12vw,8rem);
-  line-height:.9;color:var(--text);letter-spacing:.02em;margin-bottom:.5rem;
+  font-family:var(--fd);font-size:clamp(4.5rem,14vw,10rem);
+  line-height:.88;letter-spacing:.01em;margin-bottom:2rem;
 }
-.hero h1 span{color:var(--accent)}
-.hero-sub{font-size:1rem;color:var(--muted);max-width:420px;margin-bottom:2.5rem;line-height:1.7}
-.hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-.btn-primary{
-  background:var(--accent);color:#0a0a0a;font-family:var(--font-body);font-weight:500;
-  font-size:14px;padding:12px 24px;border-radius:100px;border:none;cursor:pointer;
-  text-decoration:none;transition:all .2s;
+.hero h1 em{color:var(--accent);font-style:normal}
+.hero-desc{
+  font-size:1rem;color:var(--muted);max-width:480px;line-height:1.75;
+  margin-bottom:3rem;border-left:2px solid var(--border2);padding-left:1.25rem;
 }
-.btn-primary:hover{background:var(--accent2);transform:translateY(-1px)}
-.btn-ghost{
-  background:transparent;color:var(--text);font-family:var(--font-body);font-weight:400;
-  font-size:14px;padding:12px 24px;border-radius:100px;border:1px solid var(--border2);cursor:pointer;
-  text-decoration:none;transition:all .2s;
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn-p{
+  background:var(--accent);color:#080808;font-family:var(--fb);font-weight:500;
+  font-size:13px;padding:11px 22px;border-radius:100px;border:none;cursor:pointer;
+  text-decoration:none;transition:all .2s;letter-spacing:.02em;
 }
-.btn-ghost:hover{border-color:rgba(255,255,255,0.3);background:rgba(255,255,255,0.04)}
-.hero-scroll{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:8px;
-  font-size:11px;color:var(--muted2);letter-spacing:.1em;text-transform:uppercase;
+.btn-p:hover{background:var(--accent2);transform:translateY(-1px)}
+.btn-g{
+  background:transparent;color:var(--text);font-family:var(--fb);font-weight:400;
+  font-size:13px;padding:11px 22px;border-radius:100px;
+  border:1px solid var(--border2);cursor:pointer;text-decoration:none;transition:all .2s;
 }
-.scroll-line{width:1px;height:40px;background:linear-gradient(var(--muted2),transparent);animation:scrolldown 2s infinite}
-@keyframes scrolldown{0%{height:0;opacity:1}100%{height:40px;opacity:0}}
+.btn-g:hover{border-color:rgba(255,255,255,0.28);background:rgba(255,255,255,0.03)}
+.hero-scroll-hint{
+  position:absolute;bottom:2.5rem;left:2.5rem;
+  font-size:11px;color:var(--muted2);letter-spacing:.12em;text-transform:uppercase;
+  display:flex;align-items:center;gap:10px;
+}
+.hero-scroll-hint::before{content:'';width:32px;height:1px;background:var(--muted2)}
 
-/* ─── NAV ─── */
+/* ── NAV ── */
 .nav{
-  position:sticky;top:0;z-index:100;
-  background:rgba(10,10,10,0.9);backdrop-filter:blur(20px);
+  position:sticky;top:0;z-index:200;
+  background:rgba(8,8,8,0.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border-bottom:1px solid var(--border);
-  padding:0 2rem;display:flex;align-items:center;gap:0;overflow-x:auto;
+  display:flex;align-items:center;padding:0 2rem;gap:0;overflow-x:auto;
 }
-.nav-logo{font-family:var(--font-display);font-size:1.4rem;color:var(--accent);padding:1rem 1.5rem 1rem 0;flex-shrink:0;border-right:1px solid var(--border);margin-right:1rem}
+.nav-brand{
+  font-family:var(--fd);font-size:1.5rem;color:var(--accent);
+  padding:.85rem 1.5rem .85rem 0;margin-right:1rem;
+  border-right:1px solid var(--border);flex-shrink:0;letter-spacing:.05em;
+}
 .nav a{
-  color:var(--muted);font-size:13px;font-weight:400;text-decoration:none;
-  padding:.9rem 1rem;white-space:nowrap;border-bottom:2px solid transparent;
-  transition:all .2s;flex-shrink:0;
+  color:var(--muted);font-size:12px;font-weight:400;letter-spacing:.04em;
+  text-decoration:none;padding:.85rem 1rem;white-space:nowrap;
+  border-bottom:2px solid transparent;transition:all .2s;flex-shrink:0;
 }
 .nav a:hover,.nav a.active{color:var(--text);border-bottom-color:var(--accent)}
 
-/* ─── SECTIONS ─── */
-section{padding:5rem 2rem;max-width:1100px;margin:0 auto}
-.section-label{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.15em;font-weight:500;margin-bottom:.75rem}
-.section-title{font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);line-height:.95;margin-bottom:1.5rem}
-.section-sub{color:var(--muted);max-width:500px;line-height:1.7;margin-bottom:3rem}
+/* ── LAYOUT ── */
+.wrap{max-width:1080px;margin:0 auto;padding:5rem 2rem}
+@media(max-width:640px){.wrap{padding:3.5rem 1.25rem}}
 
-/* ─── OVERVIEW CARDS ─── */
-.overview-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:4rem}
-.ov-card{background:var(--bg2);padding:1.5rem;transition:background .2s}
-.ov-card:hover{background:var(--bg3)}
-.ov-num{font-family:var(--font-display);font-size:3.5rem;color:var(--accent);line-height:1;margin-bottom:.25rem}
-.ov-label{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
-.ov-desc{font-size:13px;color:var(--muted2);margin-top:.5rem}
+/* ── SECTION HEADERS ── */
+.s-label{font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.18em;font-weight:500;font-family:var(--fm);margin-bottom:.6rem}
+.s-title{font-family:var(--fd);font-size:clamp(2.8rem,7vw,5rem);line-height:.92;margin-bottom:1.25rem}
+.s-sub{color:var(--muted);max-width:520px;line-height:1.75;margin-bottom:3rem;font-size:.95rem}
 
-/* ─── PHASE SELECTOR ─── */
+/* ── OVERVIEW STRIP ── */
+.ov-strip{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:1px;background:var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:3.5rem;
+}
+.ov-cell{background:var(--bg2);padding:1.5rem 1.25rem;transition:background .2s}
+.ov-cell:hover{background:var(--bg3)}
+.ov-n{font-family:var(--fd);font-size:3rem;color:var(--accent);line-height:1;margin-bottom:.2rem}
+.ov-l{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em}
+.ov-d{font-size:12px;color:var(--muted2);margin-top:.4rem;line-height:1.5}
+
+/* ── PHASE TABS ── */
 .phase-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:2rem}
-.phase-btn{
-  font-family:var(--font-body);font-size:13px;font-weight:500;
-  padding:8px 18px;border-radius:100px;border:1px solid var(--border2);
-  background:transparent;color:var(--muted);cursor:pointer;transition:all .2s;
+.ptab{
+  font-family:var(--fb);font-size:12px;font-weight:500;padding:8px 18px;
+  border-radius:100px;border:1px solid var(--border2);background:transparent;
+  color:var(--muted);cursor:pointer;transition:all .2s;letter-spacing:.02em;
 }
-.phase-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.25)}
-.phase-btn.active{background:var(--accent);color:#0a0a0a;border-color:var(--accent)}
+.ptab:hover{color:var(--text);border-color:rgba(255,255,255,0.25)}
+.ptab.active{background:var(--accent);color:#080808;border-color:var(--accent)}
+.pp{display:none}.pp.active{display:block}
 
-.phase-panel{display:none}
-.phase-panel.active{display:block}
-
+/* ── PHASE META ── */
 .phase-meta{
-  display:flex;gap:1px;background:var(--border);border-radius:var(--r);
-  overflow:hidden;margin-bottom:2rem;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1px;background:var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:2rem;
 }
-.phase-meta-item{background:var(--bg2);padding:1rem 1.5rem;flex:1}
-.pm-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.25rem}
-.pm-val{font-size:1.1rem;font-weight:500}
+.pm-cell{background:var(--bg2);padding:.9rem 1.1rem}
+.pm-l{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em;margin-bottom:.25rem;font-family:var(--fm)}
+.pm-v{font-size:1rem;font-weight:500}
 
-/* ─── WEEK TABS ─── */
-.week-tabs{display:flex;gap:6px;margin-bottom:1.5rem;flex-wrap:wrap}
-.week-btn{
-  font-size:12px;padding:5px 14px;border-radius:100px;border:1px solid var(--border);
-  background:transparent;color:var(--muted2);cursor:pointer;transition:all .2s;font-family:var(--font-body);
+/* ── MONTH ACCORDION ── */
+.month-list{display:flex;flex-direction:column;gap:10px}
+.month-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.month-header{
+  display:flex;align-items:center;gap:14px;padding:1.1rem 1.25rem;
+  cursor:pointer;transition:background .15s;user-select:none;
 }
-.week-btn:hover{color:var(--muted);border-color:var(--border2)}
-.week-btn.active{color:var(--text);border-color:var(--border2);background:var(--bg3)}
-
-.week-panel{display:none}.week-panel.active{display:block}
-
-/* ─── DAY CARDS ─── */
-.day-grid{display:flex;flex-direction:column;gap:10px}
-.day-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
-.day-header{
-  display:flex;align-items:center;gap:12px;padding:1rem 1.25rem;
-  cursor:pointer;user-select:none;transition:background .2s;
+.month-header:hover{background:var(--bg3)}
+.month-num{
+  font-family:var(--fd);font-size:2rem;color:var(--accent);
+  line-height:1;min-width:44px;flex-shrink:0;
 }
-.day-header:hover{background:var(--bg3)}
-.day-dot{
-  width:36px;height:36px;border-radius:50%;display:flex;align-items:center;
-  justify-content:center;font-size:11px;font-weight:500;font-family:var(--font-mono);flex-shrink:0;
-}
-.d-push{background:rgba(100,181,246,0.12);color:var(--push);border:1px solid rgba(100,181,246,0.2)}
-.d-pull{background:rgba(129,199,132,0.12);color:var(--pull);border:1px solid rgba(129,199,132,0.2)}
-.d-rest{background:var(--bg3);color:var(--muted);border:1px solid var(--border)}
-.d-full{background:rgba(200,245,100,0.1);color:var(--accent);border:1px solid rgba(200,245,100,0.2)}
-.d-skill{background:rgba(255,183,77,0.1);color:var(--skill);border:1px solid rgba(255,183,77,0.2)}
-.day-name{font-weight:500;flex:1}
-.day-type-badge{
+.month-info{flex:1}
+.month-title{font-weight:500;font-size:15px;margin-bottom:2px}
+.month-focus{font-size:12px;color:var(--muted)}
+.month-badge{
   font-size:10px;font-weight:500;padding:3px 10px;border-radius:100px;
-  text-transform:uppercase;letter-spacing:.07em;
+  text-transform:uppercase;letter-spacing:.07em;flex-shrink:0;
 }
-.badge-push{background:rgba(100,181,246,0.12);color:var(--push)}
-.badge-pull{background:rgba(129,199,132,0.12);color:var(--pull)}
-.badge-rest{background:var(--bg3);color:var(--muted)}
-.badge-full{background:rgba(200,245,100,0.1);color:var(--accent)}
-.badge-skill{background:rgba(255,183,77,0.1);color:var(--skill)}
-.chevron{color:var(--muted2);font-size:12px;transition:transform .25s;margin-left:4px}
-.chevron.open{transform:rotate(180deg)}
+.mb-p1{background:rgba(200,245,100,0.1);color:var(--accent)}
+.mb-p2{background:rgba(100,181,246,0.1);color:var(--push)}
+.mb-p3{background:rgba(129,199,132,0.1);color:var(--pull)}
+.mb-p4{background:rgba(255,183,77,0.1);color:var(--skill)}
+.chev{color:var(--muted2);font-size:11px;transition:transform .22s;margin-left:4px;flex-shrink:0}
+.chev.open{transform:rotate(180deg)}
+.month-body{display:none;border-top:1px solid var(--border)}
+.month-body.open{display:block}
+
+/* ── WEEK TABS inside month ── */
+.week-tabs{display:flex;gap:6px;padding:1rem 1.25rem .5rem;flex-wrap:wrap;border-bottom:1px solid var(--border)}
+.wtab{
+  font-size:11px;padding:4px 12px;border-radius:100px;border:1px solid var(--border);
+  background:transparent;color:var(--muted2);cursor:pointer;transition:all .15s;font-family:var(--fb);
+}
+.wtab:hover{color:var(--muted);border-color:var(--border2)}
+.wtab.active{color:var(--text);border-color:var(--border2);background:var(--bg3)}
+.wp{display:none}.wp.active{display:block}
+
+/* ── DAY CARDS ── */
+.day-list{display:flex;flex-direction:column;gap:8px;padding:1rem 1.25rem}
+.day-card{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.day-hd{
+  display:flex;align-items:center;gap:12px;padding:.85rem 1rem;
+  cursor:pointer;transition:background .15s;user-select:none;
+}
+.day-hd:hover{background:var(--bg4)}
+.day-dot{
+  width:34px;height:34px;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-size:10px;font-weight:500;font-family:var(--fm);flex-shrink:0;
+}
+.d-push{background:rgba(100,181,246,0.1);color:var(--push);border:1px solid rgba(100,181,246,0.18)}
+.d-pull{background:rgba(129,199,132,0.1);color:var(--pull);border:1px solid rgba(129,199,132,0.18)}
+.d-rest{background:var(--bg4);color:var(--muted);border:1px solid var(--border)}
+.d-full{background:rgba(200,245,100,0.08);color:var(--accent);border:1px solid rgba(200,245,100,0.18)}
+.day-name{font-weight:500;font-size:13px;flex:1}
+.dtag{font-size:9px;font-weight:500;padding:2px 8px;border-radius:100px;text-transform:uppercase;letter-spacing:.06em}
+.t-push{background:rgba(100,181,246,0.1);color:var(--push)}
+.t-pull{background:rgba(129,199,132,0.1);color:var(--pull)}
+.t-rest{background:var(--bg4);color:var(--muted2)}
+.t-full{background:rgba(200,245,100,0.08);color:var(--accent)}
 .day-body{display:none;border-top:1px solid var(--border)}
 .day-body.open{display:block}
 
-/* ─── EXERCISE TABLE ─── */
-.db-section{padding:.75rem 1.25rem}
-.db-section + .db-section{border-top:1px solid var(--border)}
-.db-section-title{
-  font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;
-  font-weight:500;margin-bottom:.75rem;font-family:var(--font-mono);
-}
-.ex-list{display:flex;flex-direction:column;gap:0}
-.ex-item{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,0.04);align-items:flex-start}
-.ex-item:last-child{border-bottom:none}
-.ex-n{font-family:var(--font-mono);font-size:11px;color:var(--muted2);min-width:18px;padding-top:2px;flex-shrink:0}
-.ex-content{}
-.ex-name{font-size:14px;font-weight:500;margin-bottom:2px}
-.ex-detail{font-size:12px;color:var(--muted);line-height:1.55}
-.new-tag{
-  display:inline-block;font-size:9px;font-weight:500;padding:1px 6px;border-radius:4px;
-  background:rgba(239,83,80,0.15);color:var(--danger);margin-left:6px;vertical-align:middle;text-transform:uppercase;letter-spacing:.05em;
-}
-.upgrade-tag{
-  display:inline-block;font-size:9px;font-weight:500;padding:1px 6px;border-radius:4px;
-  background:rgba(255,183,77,0.15);color:var(--skill);margin-left:6px;vertical-align:middle;text-transform:uppercase;
-}
+/* ── EXERCISE LIST ── */
+.db-sec{padding:.75rem 1rem}
+.db-sec+.db-sec{border-top:1px solid rgba(255,255,255,0.04)}
+.db-sec-title{font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:.14em;font-family:var(--fm);font-weight:500;margin-bottom:.65rem}
+.ex-list{display:flex;flex-direction:column}
+.ex-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03);align-items:flex-start}
+.ex-row:last-child{border-bottom:none}
+.ex-n{font-family:var(--fm);font-size:10px;color:var(--muted2);min-width:16px;padding-top:2px;flex-shrink:0}
+.ex-name{font-size:13px;font-weight:500;margin-bottom:2px}
+.ex-det{font-size:11px;color:var(--muted);line-height:1.55}
+.ntag{display:inline-block;font-size:8px;font-weight:500;padding:1px 5px;border-radius:3px;background:rgba(239,83,80,0.15);color:var(--danger);margin-left:5px;text-transform:uppercase;vertical-align:middle}
+.utag{display:inline-block;font-size:8px;font-weight:500;padding:1px 5px;border-radius:3px;background:rgba(255,183,77,0.12);color:var(--skill);margin-left:5px;text-transform:uppercase;vertical-align:middle}
 
-/* ─── MEAL / SKIN ROWS ─── */
-.meal-list,.skin-list{display:flex;flex-direction:column;gap:0}
-.meal-item,.skin-item{
-  display:flex;gap:12px;align-items:flex-start;padding:9px 0;
-  border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;
-}
-.meal-item:last-child,.skin-item:last-child{border-bottom:none}
-.meal-time,.skin-time{
-  font-family:var(--font-mono);font-size:10px;color:var(--muted2);
-  background:var(--bg3);border:1px solid var(--border);border-radius:5px;
-  padding:2px 8px;flex-shrink:0;margin-top:2px;min-width:52px;text-align:center;
-}
-.meal-total .meal-time{color:var(--accent);border-color:rgba(200,245,100,0.2);background:rgba(200,245,100,0.06)}
-.meal-total{font-weight:500}
+/* ── MEAL / SKIN ROWS ── */
+.row-list{display:flex;flex-direction:column}
+.m-row{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.03);font-size:12px}
+.m-row:last-child{border-bottom:none}
+.m-time{font-family:var(--fm);font-size:9px;color:var(--muted2);background:var(--bg4);border:1px solid var(--border);border-radius:4px;padding:2px 7px;min-width:48px;text-align:center;flex-shrink:0;margin-top:1px}
+.m-total .m-time{color:var(--accent);border-color:rgba(200,245,100,0.2);background:rgba(200,245,100,0.05)}
+.m-total{font-weight:500}
 
-/* ─── NOTE BOX ─── */
-.note-box{
-  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);
-  padding:1rem 1.25rem;font-size:13px;color:var(--muted);line-height:1.65;margin:.5rem 0;
-}
-.upgrade-box{
-  background:rgba(255,183,77,0.07);border:1px solid rgba(255,183,77,0.18);
-  border-radius:var(--r);padding:1rem 1.25rem;font-size:13px;color:var(--skill);
-  line-height:1.65;margin:1.5rem 0;
-}
-.accent-box{
-  background:rgba(200,245,100,0.06);border:1px solid rgba(200,245,100,0.18);
-  border-radius:var(--r);padding:1rem 1.25rem;font-size:13px;color:var(--accent);
-  line-height:1.65;margin:1.5rem 0;
-}
+/* ── CALLOUT BOXES ── */
+.box-note{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1.1rem;font-size:12px;color:var(--muted);line-height:1.65;margin:.75rem 0}
+.box-warn{background:rgba(255,183,77,0.06);border:1px solid rgba(255,183,77,0.16);border-radius:var(--r);padding:.9rem 1.1rem;font-size:12px;color:var(--skill);line-height:1.65;margin:1.25rem 0}
+.box-accent{background:rgba(200,245,100,0.05);border:1px solid rgba(200,245,100,0.16);border-radius:var(--r);padding:.9rem 1.1rem;font-size:12px;color:var(--accent);line-height:1.65;margin:1.25rem 0}
 
-/* ─── NUTRITION SECTION ─── */
-.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:2rem}
-.food-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.25rem}
-.food-card-title{font-family:var(--font-display);font-size:1.4rem;color:var(--accent);margin-bottom:.75rem}
-.food-item{
-  display:flex;justify-content:space-between;align-items:flex-start;
-  padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.05);font-size:13px;
-}
-.food-item:last-child{border-bottom:none}
-.food-protein{font-family:var(--font-mono);font-size:12px;color:var(--accent);flex-shrink:0;margin-left:12px}
-.food-note{font-size:11px;color:var(--muted2);margin-top:2px}
-
-.sample-day{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;margin-bottom:2rem}
-.sd-header{padding:1rem 1.25rem;border-bottom:1px solid var(--border);font-weight:500}
-.sd-row{
-  display:flex;gap:12px;padding:10px 1.25rem;border-bottom:1px solid rgba(255,255,255,0.04);
-  font-size:13px;align-items:flex-start;
-}
+/* ── NUTRITION ── */
+.food-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:2rem}
+.food-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);padding:1.25rem}
+.food-card-title{font-family:var(--fd);font-size:1.6rem;color:var(--accent);margin-bottom:.75rem}
+.f-item{display:flex;justify-content:space-between;align-items:flex-start;padding:7px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px}
+.f-item:last-child{border-bottom:none}
+.f-protein{font-family:var(--fm);font-size:11px;color:var(--accent);flex-shrink:0;margin-left:10px}
+.f-note{font-size:10px;color:var(--muted2);margin-top:2px}
+.sample-day{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden;margin-bottom:2rem}
+.sd-head{padding:.9rem 1.25rem;border-bottom:1px solid var(--border);font-weight:500;font-size:14px}
+.sd-row{display:flex;gap:12px;padding:9px 1.25rem;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;align-items:flex-start}
 .sd-row:last-child{border-bottom:none}
-.sd-time{font-family:var(--font-mono);font-size:11px;color:var(--muted2);min-width:52px;flex-shrink:0;margin-top:2px}
-.sd-meal{flex:1}
-.sd-protein{font-family:var(--font-mono);font-size:12px;color:var(--accent);flex-shrink:0;margin-top:2px}
-.sd-total{background:rgba(200,245,100,0.06);font-weight:500}
-.sd-total .sd-time{color:var(--accent)}
+.sd-t{font-family:var(--fm);font-size:10px;color:var(--muted2);min-width:50px;flex-shrink:0;margin-top:1px}
+.sd-m{flex:1}
+.sd-p{font-family:var(--fm);font-size:11px;color:var(--accent);flex-shrink:0;margin-top:1px}
+.sd-total{background:rgba(200,245,100,0.04);font-weight:500}
+.sd-total .sd-t{color:var(--accent)}
 
-/* ─── PROBLEMS SECTION ─── */
-.problem-grid{display:flex;flex-direction:column;gap:16px}
-.problem-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
-.problem-header{
-  display:flex;align-items:center;gap:14px;padding:1.25rem;
-  cursor:pointer;transition:background .2s;
-}
-.problem-header:hover{background:var(--bg3)}
-.problem-icon{
-  width:40px;height:40px;border-radius:10px;display:flex;align-items:center;
-  justify-content:center;font-size:18px;flex-shrink:0;
-}
-.problem-title{font-size:16px;font-weight:500;flex:1}
-.problem-body{display:none;border-top:1px solid var(--border);padding:1.25rem}
-.problem-body.open{display:block}
+/* ── PROBLEMS ── */
+.prob-grid{display:flex;flex-direction:column;gap:12px}
+.prob-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.prob-hd{display:flex;align-items:center;gap:14px;padding:1.1rem 1.25rem;cursor:pointer;transition:background .15s}
+.prob-hd:hover{background:var(--bg3)}
+.prob-icon{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.prob-title{font-size:15px;font-weight:500;flex:1}
+.prob-body{display:none;border-top:1px solid var(--border);padding:1.25rem}
+.prob-body.open{display:block}
 
-/* ─── TIMELINE ─── */
-.timeline{position:relative;padding-left:2rem}
-.timeline::before{content:'';position:absolute;left:.5rem;top:0;bottom:0;width:1px;background:var(--border2)}
-.tl-item{position:relative;margin-bottom:2.5rem}
-.tl-item::before{
-  content:'';position:absolute;left:-1.625rem;top:.3rem;
-  width:10px;height:10px;border-radius:50%;background:var(--bg);
-  border:2px solid var(--accent);
-}
-.tl-phase{font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-mono);margin-bottom:.25rem}
-.tl-title{font-size:1.1rem;font-weight:500;margin-bottom:.5rem}
-.tl-list{display:flex;flex-direction:column;gap:6px}
-.tl-row{display:flex;gap:10px;font-size:13px;color:var(--muted)}
-.tl-cat{font-family:var(--font-mono);font-size:10px;color:var(--muted2);min-width:52px;flex-shrink:0;padding-top:2px}
-
-/* ─── SKIN + HAIR ─── */
-.routine-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:2rem}
-.routine-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden}
-.rc-head{padding:1rem 1.25rem;border-bottom:1px solid var(--border)}
-.rc-title{font-family:var(--font-display);font-size:1.5rem;margin-bottom:.15rem}
-.rc-sub{font-size:12px;color:var(--muted)}
-.rc-body{padding:1rem 1.25rem}
-.rc-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:13px;align-items:flex-start}
+/* ── SKIN / HAIR ── */
+.routine-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:2rem}
+.rc{background:var(--bg2);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.rc-head{padding:.9rem 1.25rem;border-bottom:1px solid var(--border)}
+.rc-title{font-family:var(--fd);font-size:1.5rem;margin-bottom:.15rem}
+.rc-sub{font-size:11px;color:var(--muted)}
+.rc-body{padding:.9rem 1.25rem}
+.rc-row{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,0.04);font-size:12px;align-items:flex-start}
 .rc-row:last-child{border-bottom:none}
-.rc-time{font-family:var(--font-mono);font-size:10px;color:var(--muted2);background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:2px 7px;min-width:48px;text-align:center;flex-shrink:0;margin-top:2px}
+.rc-t{font-family:var(--fm);font-size:9px;color:var(--muted2);background:var(--bg3);border:1px solid var(--border);border-radius:4px;padding:2px 7px;min-width:46px;text-align:center;flex-shrink:0;margin-top:1px}
+.prod-list{display:flex;flex-direction:column;gap:8px;margin-top:1.5rem}
+.prod-item{display:flex;align-items:flex-start;gap:12px;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:.9rem 1rem}
+.ppri{font-size:8px;font-weight:500;padding:3px 7px;border-radius:3px;text-transform:uppercase;letter-spacing:.07em;flex-shrink:0;margin-top:2px;font-family:var(--fm)}
+.pp-now{background:rgba(239,83,80,0.14);color:var(--danger)}
+.pp-next{background:rgba(100,181,246,0.1);color:var(--push)}
+.pp-later{background:rgba(255,183,77,0.1);color:var(--skill)}
+.pp-have{background:rgba(129,199,132,0.1);color:var(--pull)}
+.prod-name{font-weight:500;font-size:13px}
+.prod-note{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.5}
 
-.product-list{display:flex;flex-direction:column;gap:10px;margin-top:1.5rem}
-.product-item{
-  display:flex;align-items:flex-start;gap:12px;
-  background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);padding:1rem;
-}
-.product-priority{
-  font-size:9px;font-weight:500;padding:3px 8px;border-radius:4px;
-  text-transform:uppercase;letter-spacing:.07em;flex-shrink:0;margin-top:2px;font-family:var(--font-mono);
-}
-.p-now{background:rgba(239,83,80,0.15);color:var(--danger)}
-.p-next{background:rgba(100,181,246,0.12);color:var(--push)}
-.p-later{background:rgba(255,183,77,0.1);color:var(--skill)}
-.p-have{background:rgba(129,199,132,0.1);color:var(--pull)}
-.product-name{font-weight:500;font-size:14px}
-.product-note{font-size:12px;color:var(--muted);margin-top:3px;line-height:1.5}
+/* ── TIMELINE ── */
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:'';position:absolute;left:.45rem;top:0;bottom:0;width:1px;background:var(--border2)}
+.tl-item{position:relative;margin-bottom:2.5rem}
+.tl-item::before{content:'';position:absolute;left:-1.65rem;top:.25rem;width:10px;height:10px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.tl-phase{font-size:10px;color:var(--accent);text-transform:uppercase;letter-spacing:.12em;font-family:var(--fm);margin-bottom:.2rem}
+.tl-title{font-size:1.05rem;font-weight:500;margin-bottom:.6rem}
+.tl-rows{display:flex;flex-direction:column;gap:5px}
+.tl-row{display:flex;gap:10px;font-size:12px;color:var(--muted)}
+.tl-cat{font-family:var(--fm);font-size:9px;color:var(--muted2);min-width:50px;flex-shrink:0;padding-top:2px}
 
-/* ─── FOOTER ─── */
-footer{
-  border-top:1px solid var(--border);padding:2rem;
-  text-align:center;font-size:12px;color:var(--muted2);
-  font-family:var(--font-mono);
-}
-footer span{color:var(--accent)}
+/* ── DIVIDER ── */
+.divider{height:1px;background:var(--border);margin:2.5rem 0}
 
-/* ─── RESPONSIVE ─── */
-@media(max-width:640px){
-  section{padding:3rem 1.25rem}
-  .hero{padding:2rem 1.25rem 2rem}
-  .nav{padding:0 1.25rem}
-  .food-grid{grid-template-columns:1fr}
-  .routine-grid{grid-template-columns:1fr}
-}
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap;gap:1rem}
+.footer-l{font-family:var(--fm);font-size:11px;color:var(--muted2)}
+.footer-l span{color:var(--accent)}
+.footer-r{font-family:var(--fd);font-size:1.6rem;color:var(--border2);letter-spacing:.05em}
 
-/* ─── FADE IN ─── */
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
-.fade-in.visible{opacity:1;transform:none}
+/* ── ANIMATIONS ── */
+.fade{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.fade.in{opacity:1;transform:none}
 </style>
 </head>
 <body>
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-stats">
-    <div>
-      <div class="hero-stat-val">12</div>
-      <div class="hero-stat-label">Weeks</div>
-    </div>
-    <div>
-      <div class="hero-stat-val">72</div>
-      <div class="hero-stat-label">kg · 5'11</div>
-    </div>
-  </div>
-  <div style="position:relative;z-index:1">
-    <div class="hero-badge">Active plan · Beginner → Intermediate</div>
-    <h1>TRANS<br/>FORM<br/><span>ATION</span></h1>
-    <p class="hero-sub">A complete 12-week progressive plan. Training · Nutrition · Skincare · Hair. Built smart — starts easy, gets hard.</p>
-    <div class="hero-ctas">
-      <a href="#plan" class="btn-primary">View the Plan</a>
-      <a href="#nutrition" class="btn-ghost">Nutrition Guide</a>
+  <div class="hero-noise"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-inner">
+    <div class="hero-pill"><span class="hero-pill-dot"></span>12-month plan · beginner → advanced</div>
+    <h1>BUILD THE<br/>BEST VERSION<br/>OF <em>YOURSELF</em></h1>
+    <p class="hero-desc">Training · Nutrition · Skincare · Hair. Everything in one place, progressively harder — so you never plateau and never burn out.</p>
+    <div class="hero-actions">
+      <a href="#plan" class="btn-p">Start the plan</a>
+      <a href="#timeline" class="btn-g">See timeline</a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    scroll
-  </div>
+  <div class="hero-scroll-hint">scroll to explore</div>
 </section>
 
 <!-- NAV -->
-<nav class="nav" id="main-nav">
-  <div class="nav-logo">TP</div>
+<nav class="nav" id="mainnav">
+  <div class="nav-brand">TP</div>
   <a href="#overview">Overview</a>
   <a href="#plan">Plan</a>
   <a href="#nutrition">Nutrition</a>
-  <a href="#problems">Goals</a>
+  <a href="#goals">Goals</a>
   <a href="#skin">Skin</a>
   <a href="#hair">Hair</a>
   <a href="#timeline">Timeline</a>
@@ -399,1124 +336,1056 @@ footer span{color:var(--accent)}
 
 <!-- OVERVIEW -->
 <section id="overview">
-  <div class="fade-in">
-    <div class="section-label">At a glance</div>
-    <div class="section-title">The full picture</div>
-    <div class="section-sub">Everything is progressive. You start at 3 days/week with light weight. By week 10 you're lifting heavy 4 days/week and working toward handstand push-ups.</div>
-    <div class="overview-grid">
-      <div class="ov-card">
-        <div class="ov-num">3→4</div>
-        <div class="ov-label">Days/week</div>
-        <div class="ov-desc">3 days in Phase 1, 4 from Phase 2 onward</div>
-      </div>
-      <div class="ov-card">
-        <div class="ov-num">115g</div>
-        <div class="ov-label">Protein/day</div>
-        <div class="ov-desc">Target every single day — non-negotiable</div>
-      </div>
-      <div class="ov-card">
-        <div class="ov-num">4</div>
-        <div class="ov-label">Phases</div>
-        <div class="ov-desc">Foundation → Build → Intensify → Peak</div>
-      </div>
-      <div class="ov-card">
-        <div class="ov-num">HSPU</div>
-        <div class="ov-label">Final goal</div>
-        <div class="ov-desc">Handstand push-up — skill + strength</div>
-      </div>
-    </div>
-    <div class="accent-box">Equipment you have: 1 barbell · 2 dumbbells · 2×5kg, 2×3kg, 2×2kg plates · 150lbs gripper. That's everything you need for all 12 weeks.</div>
+<div class="wrap fade">
+  <div class="s-label">At a glance</div>
+  <div class="s-title">The full picture</div>
+  <div class="s-sub">12 months. 4 phases. Every goal — wrists, frame, handstand push-up, clear skin, defined waves — addressed with a specific plan.</div>
+  <div class="ov-strip">
+    <div class="ov-cell"><div class="ov-n">12</div><div class="ov-l">Months</div><div class="ov-d">Full year of progressive overload</div></div>
+    <div class="ov-cell"><div class="ov-n">4</div><div class="ov-l">Phases</div><div class="ov-d">Foundation → Build → Intensify → Master</div></div>
+    <div class="ov-cell"><div class="ov-n">3→5</div><div class="ov-l">Days/week</div><div class="ov-d">Starts at 3, builds to 5 by Phase 4</div></div>
+    <div class="ov-cell"><div class="ov-n">115g</div><div class="ov-l">Protein/day</div><div class="ov-d">Non-negotiable, every single day</div></div>
+    <div class="ov-cell"><div class="ov-n">HSPU</div><div class="ov-l">Final goal</div><div class="ov-d">Handstand push-up — skill + strength</div></div>
   </div>
+  <div class="box-accent">Equipment: 1 barbell · 2 dumbbells · 2×5kg, 2×3kg, 2×2kg plates · 150lbs gripper. That covers everything for all 12 months.</div>
+</div>
 </section>
 
 <!-- TRAINING PLAN -->
 <section id="plan">
-  <div class="fade-in">
-    <div class="section-label">Training</div>
-    <div class="section-title">12-week plan</div>
-    <div class="section-sub">Click any phase, then any week, then any day to see the full workout + meals + skincare for that day.</div>
+<div class="wrap fade">
+  <div class="s-label">Training</div>
+  <div class="s-title">12-month plan</div>
+  <div class="s-sub">Click a phase → click a month → click any day to see the full workout, meals, and skincare for that day.</div>
 
-    <div class="phase-tabs">
-      <button class="phase-btn active" onclick="showPhase('p1')">Phase 1 · Wk 1–3</button>
-      <button class="phase-btn" onclick="showPhase('p2')">Phase 2 · Wk 4–6</button>
-      <button class="phase-btn" onclick="showPhase('p3')">Phase 3 · Wk 7–9</button>
-      <button class="phase-btn" onclick="showPhase('p4')">Phase 4 · Wk 10–12</button>
-    </div>
+  <div class="phase-tabs">
+    <button class="ptab active" onclick="showPhase('ph1',this)">Phase 1 · Mo 1–3</button>
+    <button class="ptab" onclick="showPhase('ph2',this)">Phase 2 · Mo 4–6</button>
+    <button class="ptab" onclick="showPhase('ph3',this)">Phase 3 · Mo 7–9</button>
+    <button class="ptab" onclick="showPhase('ph4',this)">Phase 4 · Mo 10–12</button>
+  </div>
 
-    <!-- PHASE 1 -->
-    <div id="p1" class="phase-panel active">
-      <div class="phase-meta">
-        <div class="phase-meta-item"><div class="pm-label">Focus</div><div class="pm-val">Foundation — learn movements</div></div>
-        <div class="phase-meta-item"><div class="pm-label">Days/week</div><div class="pm-val">3 days</div></div>
-        <div class="phase-meta-item"><div class="pm-label">Session</div><div class="pm-val">30–35 min</div></div>
+<!-- ════════════ PHASE 1 ════════════ -->
+<div id="ph1" class="pp active">
+  <div class="phase-meta">
+    <div class="pm-cell"><div class="pm-l">Focus</div><div class="pm-v">Foundation — learn every movement</div></div>
+    <div class="pm-cell"><div class="pm-l">Days/week</div><div class="pm-v">3 days</div></div>
+    <div class="pm-cell"><div class="pm-l">Session</div><div class="pm-v">30–40 min</div></div>
+    <div class="pm-cell"><div class="pm-l">Weight policy</div><div class="pm-v">Light — form first</div></div>
+  </div>
+  <div class="box-warn">Phase 1 rule: if it feels too easy, that is correct. Don't add weight for the first month. Learn perfect form on every movement — that is the actual goal right now.</div>
+
+  <div class="month-list">
+
+    <!-- MONTH 1 -->
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">01</div>
+        <div class="month-info">
+          <div class="month-title">Month 1 — Introduction</div>
+          <div class="month-focus">3 days · Learn the movements · Very light weight · Skincare routine starts</div>
+        </div>
+        <span class="month-badge mb-p1">Phase 1</span>
+        <span class="chev">▾</span>
       </div>
-      <div class="upgrade-box">Phase 1 rule: if it feels too easy, that's correct. Don't add weight this phase. Learn perfect form on every movement — that's the actual goal.</div>
-
-      <div class="day-grid">
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-push">Mon</div>
-            <div class="day-name">Monday — Push (upper)</div>
-            <span class="day-type-badge badge-push">Push</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Warm-up · 5 min</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Arm circles + wrist circles</div><div class="ex-detail">30s each direction · Shoulder rolls · Neck side-to-side</div></div></div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m1">
+          <button class="wtab active" onclick="showWeek('m1','w1',this)">Week 1</button>
+          <button class="wtab" onclick="showWeek('m1','w2',this)">Week 2</button>
+          <button class="wtab" onclick="showWeek('m1','w3',this)">Week 3</button>
+          <button class="wtab" onclick="showWeek('m1','w4',this)">Week 4</button>
+        </div>
+        <!-- Week 1 -->
+        <div id="m1-w1" class="wp active">
+          <div class="day-list">
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-push">Mon</div>
+                <div class="day-name">Monday — Push (upper body)</div>
+                <span class="dtag t-push">Push</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body">
+                <div class="db-sec"><div class="db-sec-title">Warm-up · 5 min</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">Arm circles + wrist circles + neck rolls</div><div class="ex-det">30s each direction · Never skip warm-up</div></div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Training</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Push-up (knee push-up if needed)</div><div class="ex-det">3 × 8 reps · Rest 90s · Full range — chest nearly touches floor · This is your benchmark</div></div></div>
+                    <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Barbell overhead press — empty bar only</div><div class="ex-det">3 × 8 · Rest 2 min · Stand tall, brace core, press straight up · Don't arch lower back · FORM ONLY this week</div></div></div>
+                    <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Dumbbell lateral raise — 2kg</div><div class="ex-det">3 × 12 · Arms slightly bent, raise to shoulder height, lower in 3 counts · Zero swinging</div></div></div>
+                    <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Dumbbell tricep overhead extension — 2kg</div><div class="ex-det">2 × 10 · Both hands on one dumbbell · Elbows pointed up</div></div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Forearm + grip · Every session this month</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">5</span><div><div class="ex-name">Gripper — 150lbs</div><div class="ex-det">3 × max reps each hand · Full squeeze, 3-count release · Do this daily even on rest days</div></div></div>
+                    <div class="ex-row"><span class="ex-n">6</span><div><div class="ex-name">Wrist curl — 2kg dumbbell</div><div class="ex-det">2 × 15 · Forearm resting on thigh · Slow up and down</div></div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Handstand skill · 5 min every session</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">Pike hold + wall kick-up attempts</div><div class="ex-det">Pike push-up position hold 20s × 3 · Then 3 wall kick-up attempts, hold however long · 2 seconds is fine</div></div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Meals</div>
+                  <div class="row-list">
+                    <div class="m-row"><span class="m-time">7 AM</span><div>3 boiled eggs + 1 glass milk → ~30g protein</div></div>
+                    <div class="m-row"><span class="m-time">1 PM</span><div>Rice + dal + 100g paneer or chicken + 1 bowl curd → ~45g protein</div></div>
+                    <div class="m-row"><span class="m-time">4 PM</span><div>30g peanuts + 1 glass milk → ~16g protein</div></div>
+                    <div class="m-row"><span class="m-time">8 PM</span><div>2 roti + soya chunks curry (30g dry) → ~25g protein</div></div>
+                    <div class="m-row m-total"><span class="m-time">Total</span><div>~116g protein · 3L+ water</div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Skincare — start this week</div>
+                  <div class="row-list">
+                    <div class="m-row"><span class="m-time">Morning</span><div>Face wash → Niacinamide 10% serum → Moisturiser → SPF 50</div></div>
+                    <div class="m-row"><span class="m-time">Night</span><div>Face wash → Niacinamide serum → Moisturiser · Sleep 8h</div></div>
+                    <div class="m-row"><span class="m-time">Hair</span><div>Wash day: sulfate-free shampoo + conditioner · Scrunch with T-shirt · Leave-in while wet</div></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Push-up (knee push-up if needed)</div><div class="ex-detail">3 sets × 8 reps · Rest 90s · Full range — chest nearly touches floor · This is your benchmark movement</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Barbell overhead press — empty bar or 5kg each side</div><div class="ex-detail">3 sets × 8 reps · Rest 2 min · Stand tall, brace core, press straight up · Don't arch lower back</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Dumbbell lateral raise — 2kg</div><div class="ex-detail">3 sets × 12 reps · Rest 60s · Arms slightly bent, raise to shoulder height, lower in 3 counts · No swinging</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Dumbbell tricep overhead extension — 3kg</div><div class="ex-detail">2 sets × 10 reps · Hold one dumbbell with both hands overhead · Elbows stay pointed up</div></div></div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-rest">Tue</div>
+                <div class="day-name">Tuesday — Active rest</div>
+                <span class="dtag t-rest">Rest</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body">
+                <div class="db-sec">
+                  <div class="box-note">No training. Beginners need more recovery. Your muscles are repairing and growing right now.</div>
+                  <div class="ex-list" style="margin-top:.5rem">
+                    <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">20–30 min walk + Gripper 3×max + Mewing practice</div><div class="ex-det">Tongue flat on roof of mouth all day — becomes habit in 2 weeks</div></div></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="db-section">
-              <div class="db-section-title">Forearm + Grip · Every session</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">5</span><div class="ex-content"><div class="ex-name">Gripper — 150lbs</div><div class="ex-detail">3 sets × max reps each hand · Rest 30s between hands · Full squeeze, 3-count release</div></div></div>
-                <div class="ex-item"><span class="ex-n">6</span><div class="ex-content"><div class="ex-name">Wrist curl — 2kg dumbbell</div><div class="ex-detail">2 sets × 15 reps · Forearm resting on thigh · Curl wrist up and down, slow</div></div></div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-pull">Wed</div>
+                <div class="day-name">Wednesday — Pull (back + biceps)</div>
+                <span class="dtag t-pull">Pull</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body">
+                <div class="db-sec"><div class="db-sec-title">Training</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Barbell bent-over row — light (5kg each side or less)</div><div class="ex-det">3 × 8 · Hip hinge at 45°, pull bar to belly button, squeeze shoulder blades · Flat back only</div></div></div>
+                    <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Dumbbell bicep curl — 3kg</div><div class="ex-det">3 × 10 · Supinated grip · 4-count eccentric · No swinging</div></div></div>
+                    <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Dumbbell hammer curl — 3kg</div><div class="ex-det">3 × 10 · Neutral grip (thumb up) · Alternating · Hits brachialis = forearm thickness</div></div></div>
+                    <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Romanian deadlift — empty bar</div><div class="ex-det">3 × 10 · Hip hinge, flat back, feel hamstring stretch · Learn the pattern only</div></div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Forearm</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">5</span><div><div class="ex-name">Gripper 3×max + Reverse wrist curl 2×15</div><div class="ex-det">Reverse curl: overhand grip, wrist curls up · Trains outer forearm</div></div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Handstand · 5 min</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">Wall kick-up holds × 5 attempts</div><div class="ex-det">Hold as long as possible. 2–3 seconds is real progress at this stage.</div></div></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="db-section">
-              <div class="db-section-title">Handstand Skill · 5 min (end of every session)</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Pike hold + wall kick-up attempts</div><div class="ex-detail">Pike push-up position: hold 20s × 3 · Then 3 wall kick-up attempts, hold however long you can · 2 seconds is fine right now</div></div></div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-rest">Thu</div><div class="day-name">Thursday — Rest</div>
+                <span class="dtag t-rest">Rest</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body"><div class="db-sec">
+                <div class="ex-list">
+                  <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">Walk + Gripper + Jaw chewing 10 min + Full skincare</div><div class="ex-det">Chew hard fruit or sugarfree gum while studying — works masseter over months</div></div></div>
+                </div>
+              </div></div>
+            </div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-full">Fri</div>
+                <div class="day-name">Friday — Full body (light)</div>
+                <span class="dtag t-full">Full</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body">
+                <div class="db-sec"><div class="db-sec-title">Training</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Barbell squat — empty bar</div><div class="ex-det">3 × 10 · Feet shoulder-width, squat to parallel, knees track toes · Form only</div></div></div>
+                    <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Push-up</div><div class="ex-det">3 × 8–10 · Full range</div></div></div>
+                    <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">One-arm dumbbell row — 5kg</div><div class="ex-det">3 × 10 each arm · Knee on chair · Pull elbow toward hip</div></div></div>
+                    <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Plank</div><div class="ex-det">3 × 20–30s · Straight line head to heel · Core for handstand</div></div></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="db-section">
-              <div class="db-section-title">Meals today</div>
-              <div class="meal-list">
-                <div class="meal-item"><span class="meal-time">7 AM</span><div>3 boiled eggs + 1 glass milk → <strong>~30g protein</strong></div></div>
-                <div class="meal-item"><span class="meal-time">1 PM</span><div>Rice + dal + 100g paneer or chicken + 1 bowl curd → <strong>~45g protein</strong></div></div>
-                <div class="meal-item"><span class="meal-time">4 PM</span><div>Handful peanuts + 1 glass milk → <strong>~16g protein</strong></div></div>
-                <div class="meal-item"><span class="meal-time">8 PM</span><div>2 roti + soya chunks curry (30g dry) → <strong>~25g protein</strong></div></div>
-                <div class="meal-item meal-total"><span class="meal-time">Total</span><div>~116g protein · 3L+ water</div></div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-rest">Sat</div><div class="day-name">Saturday — Active recovery</div>
+                <span class="dtag t-rest">Active</span><span class="chev">▾</span>
               </div>
+              <div class="day-body"><div class="db-sec">
+                <div class="ex-list">
+                  <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">40 min walk or light sport + Gripper + Chin tucks 3×10</div><div class="ex-det">Chin tuck: pull chin straight back, hold 5s · Jaw and neck definition over months</div></div></div>
+                </div>
+              </div></div>
             </div>
-            <div class="db-section">
-              <div class="db-section-title">Skincare today</div>
-              <div class="skin-list">
-                <div class="skin-item"><span class="skin-time">Morning</span><div>Face wash → Niacinamide serum → Moisturiser → SPF 50</div></div>
-                <div class="skin-item"><span class="skin-time">Night</span><div>Face wash → Niacinamide serum → Moisturiser → 8h sleep</div></div>
-                <div class="skin-item"><span class="skin-time">Hair</span><div>Wash day: sulfate-free shampoo + conditioner · Scrunch with old T-shirt · Apply leave-in while wet, scrunch upward</div></div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-rest">Sun</div><div class="day-name">Sunday — Full rest</div>
+                <span class="dtag t-rest">Rest</span><span class="chev">▾</span>
               </div>
+              <div class="day-body"><div class="db-sec">
+                <div class="box-note">Complete rest. Sleep 8–9h. Review: did you train 3 days? Hit 115g protein 5+ days? Do skincare twice daily? That is the only checklist that matters in Month 1.</div>
+              </div></div>
             </div>
           </div>
         </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Tue</div>
-            <div class="day-name">Tuesday — Active rest</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="note-box">No training. Intentional — beginners need more recovery time. Your muscles are repairing and growing right now.</div>
-              <div class="ex-list" style="margin-top:.75rem">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">20–30 min walk outside</div><div class="ex-detail">Keeps blood flowing for recovery · Aids with face fat and cardiovascular base</div></div></div>
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Gripper — 3 sets max each hand</div><div class="ex-detail">Grip recovers fast — daily use is fine and accelerates forearm development</div></div></div>
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Mewing practice</div><div class="ex-detail">Tongue flat against roof of mouth, all day · Becomes automatic after 2–3 weeks</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Skincare</div>
-              <div class="skin-list">
-                <div class="skin-item"><span class="skin-time">Morning</span><div>Face wash → Niacinamide → Moisturiser → SPF 50</div></div>
-                <div class="skin-item"><span class="skin-time">Night</span><div>Face wash → Niacinamide → Moisturiser</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-pull">Wed</div>
-            <div class="day-name">Wednesday — Pull (back + biceps)</div>
-            <span class="day-type-badge badge-pull">Pull</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Warm-up</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Cat-cow × 10 + hip circles + torso twists</div><div class="ex-detail">Warms up spine for rowing movements</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell bent-over row — light (5kg each side or less)</div><div class="ex-detail">3 sets × 8 reps · Rest 2 min · Hip hinge at 45°, pull bar to belly button, squeeze shoulder blades · Flat back</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Dumbbell bicep curl — 3kg</div><div class="ex-detail">3 sets × 10 reps · Supinated grip · 4-count eccentric (lower slow) · No swinging</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Dumbbell hammer curl — 3kg</div><div class="ex-detail">3 sets × 10 reps · Neutral grip (thumb up) · Alternating arms · Hits brachialis = forearm thickness</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Romanian deadlift — barbell, very light</div><div class="ex-detail">3 sets × 10 reps · Hip hinge, flat back, feel hamstring stretch at bottom · Learn the movement pattern only</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Forearm</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">5</span><div class="ex-content"><div class="ex-name">Gripper — 3 sets max each hand</div></div></div>
-                <div class="ex-item"><span class="ex-n">6</span><div class="ex-content"><div class="ex-name">Reverse wrist curl — 2kg</div><div class="ex-detail">2 sets × 15 · Overhand grip, wrist curls up · Trains outer forearm — makes arms look thicker from front</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Handstand Skill · 5 min</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Wall kick-up holds × 5 attempts</div><div class="ex-detail">Hold as long as possible — even 2–3 seconds is progress. Daily consistency builds this, not gym sessions.</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Meals + Skincare</div>
-              <div class="meal-list">
-                <div class="meal-item"><span class="meal-time">All day</span><div>Same structure as Monday — 115g+ protein, 3L water</div></div>
-              </div>
-              <div class="skin-list" style="margin-top:.5rem">
-                <div class="skin-item"><span class="skin-time">Night</span><div>Face wash → Niacinamide → Moisturiser · Hair co-wash if needed (conditioner only, no shampoo)</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Thu</div>
-            <div class="day-name">Thursday — Rest + habits</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="note-box">Second rest day. Your muscles are repairing. This is productive — don't train.</div>
-              <div class="ex-list" style="margin-top:.75rem">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Walk 20–30 min + Gripper + Jaw chewing 10 min</div><div class="ex-detail">Jaw: chew a hard fruit or sugarfree gum while studying · Works the masseter muscle over months</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-full">Fri</div>
-            <div class="day-name">Friday — Full body (light)</div>
-            <span class="day-type-badge badge-full">Full body</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Warm-up</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Jumping jacks 30s + arm swings + leg swings</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell squat — empty bar or very light</div><div class="ex-detail">3 sets × 10 · Feet shoulder-width, squat to parallel, knees track over toes · Learn the movement</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Push-up</div><div class="ex-detail">3 sets × 8–10 · Full range. Knee push-up if form breaks</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">One-arm dumbbell row — 5kg</div><div class="ex-detail">3 sets × 10 each arm · Knee on chair · Pull elbow toward hip</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Dumbbell lateral raise — 2kg</div><div class="ex-detail">2 sets × 12 · Reinforce the movement</div></div></div>
-                <div class="ex-item"><span class="ex-n">5</span><div class="ex-content"><div class="ex-name">Plank</div><div class="ex-detail">3 × 20–30s · Elbows below shoulders, straight line head to heel · Core foundation for handstand</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Forearm + Handstand</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Gripper + wall kick-up holds · 5 min</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Skincare</div>
-              <div class="skin-list">
-                <div class="skin-item"><span class="skin-time">Hair</span><div>Second wash of the week — shampoo + conditioner · Leave-in while wet, scrunch up, air dry</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Sat</div>
-            <div class="day-name">Saturday — Active recovery</div>
-            <span class="day-type-badge badge-rest">Active</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">40 min walk or light sport + Gripper + Chin tucks 3×10</div><div class="ex-detail">Chin tuck: pull chin straight back (not down), hold 5s · For jaw and neck definition</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Sun</div>
-            <div class="day-name">Sunday — Full rest</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="note-box">Complete rest. No gripper even. Sleep 8–9 hours. Ask yourself: did you train 3 days? Hit protein 5+ days? Do skincare daily? That's the only checklist that matters in Phase 1.</div>
-            </div>
-          </div>
-        </div>
-
+        <!-- Weeks 2–4: same structure, progressive notes -->
+        <div id="m1-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 2: same exercises as Week 1. If push-ups feel easy, do full push-ups (no knees). OHP: add 2.5kg each side if form was solid week 1. Everything else same weight.</div>
+          <div class="box-note" style="margin:1rem">Mon/Wed/Fri same structure as Week 1. Gripper every day. Handstand skill 5 min every session. Skincare twice daily without fail.</div>
+        </div></div>
+        <div id="m1-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 3: add 2.5kg to OHP if Week 2 felt manageable. Hammer curl moves to 5kg. RDL adds 5kg each side. Start taking 5-second eccentrics on all curls.</div>
+          <div class="box-note" style="margin:1rem">By now: push-ups should be full reps, wall handstand hold should reach 10–15s, and your skincare should be a habit you don't have to think about.</div>
+        </div></div>
+        <div id="m1-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 4: your first deload week. Keep the same weights as Week 3 but reduce sets to 2 per exercise. Let your joints and tendons recover. This is how you avoid injury long-term.</div>
+          <div class="box-accent" style="margin:1rem">End of Month 1 checkpoint: OHP should feel controlled at 5–7.5kg each side · Hammer curls at 5kg · Wall hold 10–15s · Skin less oily · Hair frizz reduced. If all of these — you're on track.</div>
+        </div></div>
       </div>
     </div>
 
-    <!-- PHASE 2 -->
-    <div id="p2" class="phase-panel">
-      <div class="phase-meta">
-        <div class="phase-meta-item"><div class="pm-label">Focus</div><div class="pm-val">Build — add weight, add a day</div></div>
-        <div class="phase-meta-item"><div class="pm-label">Days/week</div><div class="pm-val">4 days</div></div>
-        <div class="phase-meta-item"><div class="pm-label">Session</div><div class="pm-val">40–45 min</div></div>
+    <!-- MONTH 2 -->
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">02</div>
+        <div class="month-info">
+          <div class="month-title">Month 2 — Load the movements</div>
+          <div class="month-focus">3 days · Add weight weekly · Introduce floor press and deadlift · Retinol starts</div>
+        </div>
+        <span class="month-badge mb-p1">Phase 1</span>
+        <span class="chev">▾</span>
       </div>
-      <div class="upgrade-box">Key shift in Phase 2: increase weight by 1–2kg whenever a set feels comfortably manageable. That's progressive overload — how every physique is built. Also: add Retinol 0.1% at night from Week 4, twice/week.</div>
-
-      <div class="day-grid">
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-push">Mon</div>
-            <div class="day-name">Monday — Push A (shoulders focus)</div>
-            <span class="day-type-badge badge-push">Push</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training — heavier than Phase 1</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell overhead press <span class="upgrade-tag">+2–5kg vs Phase 1</span></div><div class="ex-detail">4 sets × 6–8 reps · Rest 2–3 min · Your main strength builder — push hard</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Dumbbell lateral raise — 3kg</div><div class="ex-detail">4 sets × 12 · Slow — 3s up, 3s down, no swinging · These build the shoulder cap width</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Floor press (barbell) <span class="new-tag">new</span></div><div class="ex-detail">3 sets × 8 · Lie on floor, barbell across chest, press up · Safe without rack · Chest + triceps</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Dumbbell tricep extension — 5kg</div><div class="ex-detail">3 sets × 10 · Overhead, both hands on one dumbbell</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Handstand Skill — 8 min</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Pike push-up + wall hold + first negatives <span class="new-tag">new</span></div><div class="ex-detail">Pike push-ups: 3×8 · Wall hold: 3× max (aim 15s+) · Negative: kick up, lower head to floor slowly (3–5s) × 3 attempts</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Forearm</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Gripper + wrist curl + DIY wrist roller <span class="new-tag">new</span></div><div class="ex-detail">Wrist roller: tie 2kg weight to barbell with 1m rope, hold barbell at shoulder height, roll up/down 3 times · Brutal pump</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Skincare — Week 4 update</div>
-              <div class="skin-list">
-                <div class="skin-item"><span class="skin-time">Night</span><div>Add Retinol 0.1% — Mon + Thu nights only · Apply after niacinamide dries · Small amount, entire face</div></div>
-              </div>
-            </div>
-          </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m2">
+          <button class="wtab active" onclick="showWeek('m2','w1',this)">Week 5</button>
+          <button class="wtab" onclick="showWeek('m2','w2',this)">Week 6</button>
+          <button class="wtab" onclick="showWeek('m2','w3',this)">Week 7</button>
+          <button class="wtab" onclick="showWeek('m2','w4',this)">Week 8</button>
         </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-pull">Tue</div>
-            <div class="day-name">Tuesday — Pull A (back + biceps)</div>
-            <span class="day-type-badge badge-pull">Pull</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell bent-over row <span class="upgrade-tag">+2–5kg</span></div><div class="ex-detail">4 sets × 6–8 reps · Main back builder · Heavier than Phase 1</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Barbell deadlift <span class="new-tag">added</span></div><div class="ex-detail">3 sets × 6 reps · King of frame-building · Trains grip, back, glutes, hamstrings simultaneously · Learn setup carefully</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Dumbbell hammer curl — 5kg</div><div class="ex-detail">3 sets × 10 · 3s eccentric · #1 forearm thickness builder</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Barbell bicep curl — 5kg each side</div><div class="ex-detail">3 sets × 10 · Slow and controlled · Don't cheat with back</div></div></div>
-                <div class="ex-item"><span class="ex-n">5</span><div class="ex-content"><div class="ex-name">Plate pinch hold — 2kg × 30–45s <span class="new-tag">new</span></div><div class="ex-detail">3 sets · Pinch plate with fingers · Builds finger and wrist tendon thickness directly</div></div></div>
+        <div id="m2-w1" class="wp active"><div class="day-list">
+          <div class="box-accent" style="margin:1rem">Week 5 intro: same 3-day structure. Add floor press to Monday. Add conventional deadlift (light) to Wednesday. These two exercises are the biggest frame-builders in your arsenal.</div>
+          <div class="day-card">
+            <div class="day-hd" onclick="toggleDay(this)">
+              <div class="day-dot d-push">Mon</div><div class="day-name">Monday — Push (floor press added)</div>
+              <span class="dtag t-push">Push</span><span class="chev">▾</span>
+            </div>
+            <div class="day-body">
+              <div class="db-sec"><div class="db-sec-title">Training</div>
+                <div class="ex-list">
+                  <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Barbell OHP — add 2.5kg vs Month 1</div><div class="ex-det">3 × 8 · Rest 2 min</div></div></div>
+                  <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Floor press (barbell) <span class="ntag">new</span></div><div class="ex-det">3 × 8 · Lie on floor, barbell across chest, press up · Safe without rack · Chest + triceps compound</div></div></div>
+                  <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Dumbbell lateral raise — 3kg</div><div class="ex-det">3 × 12 · 3s up, 3s down · No swinging at all</div></div></div>
+                  <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Tricep extension — 3kg</div><div class="ex-det">3 × 10</div></div></div>
+                  <div class="ex-row"><span class="ex-n">5</span><div><div class="ex-name">Push-up — weighted (5kg plate on back)</div><div class="ex-det">2 × 8 · If bodyweight push-up is easy now</div></div></div>
+                </div>
+              </div>
+              <div class="db-sec"><div class="db-sec-title">Handstand — 7 min</div>
+                <div class="ex-list">
+                  <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">Pike push-up 3×8 + wall hold 3×max (aim 15s) + first negatives</div><div class="ex-det">Negative: kick up to wall, lower head toward floor slowly (3–5s), drop down · 3 attempts</div></div></div>
+                </div>
+              </div>
+              <div class="db-sec"><div class="db-sec-title">Skincare — add Retinol week 5</div>
+                <div class="row-list">
+                  <div class="m-row"><span class="m-time">Night</span><div>Add Retinol 0.1% on Mon + Thu nights only · After niacinamide dries · Small amount entire face · May get slight peeling — normal</div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Wed</div>
-            <div class="day-name">Wednesday — Rest</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Walk 30 min + Gripper + Jaw work + Mewing + Full skincare</div><div class="ex-detail">You now train 4 days — rest days matter more. Don't skip protein today.</div></div></div>
+          <div class="day-card">
+            <div class="day-hd" onclick="toggleDay(this)">
+              <div class="day-dot d-pull">Wed</div><div class="day-name">Wednesday — Pull (deadlift added)</div>
+              <span class="dtag t-pull">Pull</span><span class="chev">▾</span>
+            </div>
+            <div class="day-body">
+              <div class="db-sec"><div class="db-sec-title">Training</div>
+                <div class="ex-list">
+                  <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Barbell conventional deadlift — light <span class="ntag">new</span></div><div class="ex-det">3 × 6 · Hip width stance, flat back, bar stays close to body · Most important exercise for overall frame · Go light, learn it right</div></div></div>
+                  <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Barbell bent-over row — add 2.5kg</div><div class="ex-det">3 × 8</div></div></div>
+                  <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Hammer curl — 5kg</div><div class="ex-det">3 × 10 · 4s eccentric</div></div></div>
+                  <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Regular curl — 5kg</div><div class="ex-det">3 × 10</div></div></div>
+                  <div class="ex-row"><span class="ex-n">5</span><div><div class="ex-name">Plate pinch hold — 2kg <span class="ntag">new</span></div><div class="ex-det">3 × 30–45s · Pinch plate with fingers · Directly builds wrist tendon thickness</div></div></div>
+                </div>
+              </div>
+              <div class="db-sec"><div class="db-sec-title">Forearm circuit</div>
+                <div class="ex-list">
+                  <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">Gripper + wrist curl + reverse curl + plate pinch · 15 min total</div></div></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-push">Thu</div>
-            <div class="day-name">Thursday — Push B (chest + triceps)</div>
-            <span class="day-type-badge badge-push">Push</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Floor press — heavier</div><div class="ex-detail">4 sets × 6–8 · Add 2kg vs Monday's session · Progressive overload in action</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Weighted push-up — 5kg plate on back</div><div class="ex-detail">3 sets × 8–10 · If regular push-up is easy, add the plate · Full range</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Dumbbell chest fly — 3kg</div><div class="ex-detail">3 sets × 12 · Lie on floor, arms wide, bring together above chest · Slow stretch at bottom</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Lateral raise drop set <span class="new-tag">new</span></div><div class="ex-detail">3kg × 10 reps → immediately 2kg × 10 reps, no rest · 3 rounds · Intense shoulder pump</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Handstand — 8 min</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Elevated pike push-up (feet on chair) + negatives</div><div class="ex-detail">Elevating feet increases shoulder load · 3×8 pike + 3×5 negatives</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Skincare — retinol night</div>
-              <div class="skin-list">
-                <div class="skin-item"><span class="skin-time">Night</span><div>Second retinol application · Watch for dryness — normal · Moisturise well after</div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-pull">Fri</div>
-            <div class="day-name">Friday — Pull B (deadlift + forearms)</div>
-            <span class="day-type-badge badge-pull">Pull</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell conventional deadlift — heavier than Tuesday</div><div class="ex-detail">3 sets × 5 reps · Strength day for deadlift · Rest 3 min between sets</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Barbell row — underhand grip (supinated)</div><div class="ex-detail">3 sets × 8 · Palms facing up — involves biceps more · Different angle than Tuesday</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Concentration curl — 5kg</div><div class="ex-detail">3 sets × 10 each arm · Elbow on inner thigh, isolate bicep · Builds the peak</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Full forearm circuit</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Gripper + wrist roller + reverse wrist curl · 15 min total</div><div class="ex-detail">This is the forearm session of the week — don't cut it short</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Sat/Sun</div>
-            <div class="day-name">Weekend — Recovery</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">Sat</span><div class="ex-content"><div class="ex-name">Light walk + sport + gripper + jaw work + full skincare</div></div></div>
-                <div class="ex-item"><span class="ex-n">Sun</span><div class="ex-content"><div class="ex-name">Full rest · 8–9h sleep</div><div class="ex-detail">Did you train 4 days? Hit protein every day? Skincare twice daily? All three = all the progress.</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        </div></div>
+        <div id="m2-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 6: add 2.5kg to deadlift and row. OHP + 2.5kg if last week felt manageable. Floor press +2.5kg. Hammer curl stays 5kg but slow the eccentric to 5 seconds. Add DIY wrist roller this week.</div>
+          <div class="box-note" style="margin:1rem">DIY wrist roller: tie 2kg weight to barbell with a 1m rope. Hold barbell at shoulder height, roll the weight up and down. 3 rounds. This exercise alone accelerates forearm development faster than almost anything else.</div>
+        </div></div>
+        <div id="m2-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 7: add 4th day — Friday becomes Pull B (deadlift heavy day + forearm circuit). Mon/Wed/Fri same as before. You are now training 4 days/week. Session length increases to 40–45 min.</div>
+          <div class="box-note" style="margin:1rem">Friday pull B: Deadlift 3×5 heavier · Underhand barbell row 3×8 · Concentration curl 3×10 · Full forearm circuit 20 min (gripper + wrist roller + plate pinch + reverse curl).</div>
+        </div></div>
+        <div id="m2-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 8: deload. Reduce all weights by 10–15%, same exercises. Your joints need this. Do not skip deload weeks — they are when a lot of the long-term adaptation happens.</div>
+          <div class="box-accent" style="margin:1rem">End of Month 2: deadlift should feel natural · Floor press solid · Skin noticeably less congested · Retinol peeling should stop by now (skin adapts) · Wall handstand hold reaching 20s.</div>
+        </div></div>
       </div>
     </div>
 
-    <!-- PHASE 3 -->
-    <div id="p3" class="phase-panel">
-      <div class="phase-meta">
-        <div class="phase-meta-item"><div class="pm-label">Focus</div><div class="pm-val">Intensify — harder variations</div></div>
-        <div class="phase-meta-item"><div class="pm-label">Days/week</div><div class="pm-val">4 days</div></div>
-        <div class="phase-meta-item"><div class="pm-label">Session</div><div class="pm-val">45–50 min</div></div>
+    <!-- MONTH 3 -->
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">03</div>
+        <div class="month-info">
+          <div class="month-title">Month 3 — Establish strength</div>
+          <div class="month-focus">4 days · Heavier compounds · Squats added · Handstand negatives</div>
+        </div>
+        <span class="month-badge mb-p1">Phase 1</span>
+        <span class="chev">▾</span>
       </div>
-      <div class="upgrade-box">Phase 3: same 4-day structure, but every exercise gets harder — heavier weights, advanced variations, shorter rest, more forearm volume. Handstand negatives become controlled 5–8s descents. Skin routine is full by now.</div>
-      <div class="day-grid">
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-push">Mon</div>
-            <div class="day-name">Monday — Push A (overhead strength)</div>
-            <span class="day-type-badge badge-push">Push</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell OHP — paused reps <span class="upgrade-tag">harder variation</span></div><div class="ex-detail">4 sets × 5 reps · 2s pause at bottom before pressing · Eliminates momentum = purer strength · Go heavy</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Lateral raise — 3kg, 5 sets × 15</div><div class="ex-detail">One extra set · Slow lowering (4 counts). If you don't feel it burning by rep 12 — slow down more</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Floor press — heavier than Phase 2</div><div class="ex-detail">4 sets × 6</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Tricep dips (between two chairs) <span class="new-tag">new</span></div><div class="ex-detail">3 sets × 10 · Hands on chair seats behind you, lower body between them · Pure tricep</div></div></div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m3">
+          <button class="wtab active" onclick="showWeek('m3','w1',this)">Week 9</button>
+          <button class="wtab" onclick="showWeek('m3','w2',this)">Week 10</button>
+          <button class="wtab" onclick="showWeek('m3','w3',this)">Week 11</button>
+          <button class="wtab" onclick="showWeek('m3','w4',this)">Week 12</button>
+        </div>
+        <div id="m3-w1" class="wp active">
+          <div class="box-accent" style="margin:1rem">Month 3 structure: Mon Push A · Tue Pull A · Thu Push B · Fri Pull B. Squats join Pull A. Sessions are now 45 min. Every compound gets heavier each week.</div>
+          <div class="day-list">
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-push">Mon</div><div class="day-name">Monday — Push A (shoulder strength)</div>
+                <span class="dtag t-push">Push</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body">
+                <div class="db-sec"><div class="db-sec-title">Training</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Barbell OHP — 4 sets × 6–8 · Heavy</div><div class="ex-det">Main strength builder · Push hard · 2–3 min rest</div></div></div>
+                    <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Floor press — 4 × 6–8</div><div class="ex-det">Heavier than last month</div></div></div>
+                    <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Lateral raise drop set <span class="ntag">new</span></div><div class="ex-det">3kg × 10 → immediately 2kg × 10 · No rest between · 3 rounds · Intense shoulder pump</div></div></div>
+                    <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Tricep dips between two chairs <span class="ntag">new</span></div><div class="ex-det">3 × 10 · Hands on chair seats behind you · Lower body between · Pure tricep builder</div></div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Handstand — 8 min</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">Elevated pike push-up (feet on chair) + controlled negatives 5s</div><div class="ex-det">Elevated feet = more shoulder load · 3×8 pike · 5 controlled negatives (5s descent)</div></div></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="db-section">
-              <div class="db-section-title">Handstand — 10 min</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Elevated pikes + controlled negatives (5–8s) + partial HSPU attempt <span class="new-tag">new</span></div><div class="ex-detail">Pikes: 3×10 · Negatives: kick up, lower head to floor 5–8s, drop · 5 reps · Partial HSPU: go 1/3 down, push back. 3×3</div></div></div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-pull">Tue</div><div class="day-name">Tuesday — Pull A + Squat</div>
+                <span class="dtag t-pull">Pull</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body">
+                <div class="db-sec"><div class="db-sec-title">Training</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Barbell squat — 3 × 8 <span class="ntag">added</span></div><div class="ex-det">Below parallel · Lower body rounds out the frame · Releases testosterone</div></div></div>
+                    <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Barbell bent-over row — 4 × 6–8 heavy</div><div class="ex-det">Noticeably heavier than Month 1</div></div></div>
+                    <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Romanian deadlift — 3 × 10</div><div class="ex-det">Heavier · Feel the full hamstring stretch</div></div></div>
+                    <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Hammer + regular curl superset <span class="ntag">new</span></div><div class="ex-det">10 hammer reps → immediately 10 regular curls · 3 rounds · 90s rest after each round</div></div></div>
+                  </div>
+                </div>
               </div>
             </div>
-            <div class="db-section">
-              <div class="db-section-title">Forearm — full circuit</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Gripper + wrist roller + wrist curl + reverse curl + plate pinch · 20 min</div></div></div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-push">Thu</div><div class="day-name">Thursday — Push B (chest + volume)</div>
+                <span class="dtag t-push">Push</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body">
+                <div class="db-sec"><div class="db-sec-title">Training</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Floor press — heavier than Mon</div><div class="ex-det">4 × 6</div></div></div>
+                    <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Weighted push-up — 5kg plate 3 × 10</div></div></div>
+                    <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Dumbbell chest fly — 3kg 3 × 12</div><div class="ex-det">Floor fly: slow stretch at bottom</div></div></div>
+                    <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">OHP — 3 × 8 (lighter than Mon)</div><div class="ex-det">Volume day · Different stimulus from Monday's heavy day</div></div></div>
+                    <div class="ex-row"><span class="ex-n">5</span><div><div class="ex-name">Lateral raise — 5 × 12 with pauses at top</div><div class="ex-det">1s pause at top every rep · Increases time under tension</div></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="day-card">
+              <div class="day-hd" onclick="toggleDay(this)">
+                <div class="day-dot d-pull">Fri</div><div class="day-name">Friday — Pull B (heavy deadlift + forearms)</div>
+                <span class="dtag t-pull">Pull</span><span class="chev">▾</span>
+              </div>
+              <div class="day-body">
+                <div class="db-sec"><div class="db-sec-title">Training</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Barbell deadlift — 3 × 5 heavy</div><div class="ex-det">Heaviest pull of the week · 3 min rest · No rounding back</div></div></div>
+                    <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Underhand barbell row — 3 × 8</div><div class="ex-det">Supinated grip — more bicep involvement</div></div></div>
+                    <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Concentration curl — 5kg 3 × 10 each arm</div><div class="ex-det">Elbow on inner thigh · Builds bicep peak</div></div></div>
+                  </div>
+                </div>
+                <div class="db-sec"><div class="db-sec-title">Full forearm circuit — 20 min</div>
+                  <div class="ex-list">
+                    <div class="ex-row"><span class="ex-n">—</span><div><div class="ex-name">Gripper max × 4 sets · Wrist roller 3 rounds · Plate pinch 40s × 3 · Reverse + regular wrist curl</div><div class="ex-det">This session is responsible for most of your forearm development. Never skip it.</div></div></div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-pull">Tue</div>
-            <div class="day-name">Tuesday — Pull A + Squat</div>
-            <span class="day-type-badge badge-pull">Pull</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell bent-over row — heavy (4×6)</div><div class="ex-detail">Significantly heavier than Phase 1. Add 2.5–5kg vs Phase 2.</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Romanian deadlift — heavier (3×10)</div><div class="ex-detail">You know the movement now — push the weight</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Barbell squat — 3×8 <span class="new-tag">added here</span></div><div class="ex-detail">Lower body development rounds out the frame · Go below parallel if mobility allows</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Hammer curl + regular curl superset <span class="new-tag">new</span></div><div class="ex-detail">10 hammer reps → immediately 10 regular curl reps = 1 superset · 3 rounds · 90s rest after each round</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Wed</div>
-            <div class="day-name">Wednesday — Rest</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="ex-list"><div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Walk + gripper + mewing + full skincare both AM and PM</div></div></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-push">Thu</div>
-            <div class="day-name">Thursday — Push B (volume + skill)</div>
-            <span class="day-type-badge badge-push">Push</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Floor press — 4×6 heavy</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Weighted push-up — 5kg plate, 3×12</div><div class="ex-detail">If 12 reps feel easy — slow down tempo (3s down, 1s up)</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">OHP — 3×8 (slightly lighter than Mon)</div><div class="ex-detail">Volume day vs Monday heavy day — different stimulus, same muscle</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Lateral raise drop set × 4 rounds</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Handstand — 10 min</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Controlled negatives (aim 8s descent) + partial range HSPU reps</div><div class="ex-detail">By week 9 you should have 3–5 controlled negatives. That's significant progress.</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-pull">Fri</div>
-            <div class="day-name">Friday — Pull B (heavy compounds)</div>
-            <span class="day-type-badge badge-pull">Pull</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell deadlift — 3×5, heavy</div><div class="ex-detail">Heaviest you've pulled so far · Use lifting straps if grip fails · No rounding the back</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Underhand barbell row — 3×8</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Concentration curl — 5–8kg, 3×10</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Full forearm circuit · 20 min</div><div class="ex-detail">Gripper + wrist roller + plate pinch + reverse curl</div></div></div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Sat/Sun</div>
-            <div class="day-name">Weekend — Recovery</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="note-box">Checkpoint — By week 9: OHP should be 15–20kg heavier than start · Forearm pump visible after training · Wall holds at 30s+ · If not, check sleep (8h) and protein (115g+).</div>
-            </div>
-          </div>
-        </div>
+        <div id="m3-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 10: add 2.5–5kg to all main lifts where last week felt manageable. Deadlift + squat take priority — push weight on these. Handstand negatives aim for 6–7s descent now.</div>
+        </div></div>
+        <div id="m3-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 11: add partial HSPU attempts on Monday handstand practice. Go down 1/3 of the way and push back up. 3 sets of 3. This is the most important HSPU milestone so far.</div>
+          <div class="box-note" style="margin:1rem">Also: increase wrist roller weight to 3kg by tying an extra 1kg to the rope. Forearm veins should be appearing during training sessions by now.</div>
+        </div></div>
+        <div id="m3-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 12: deload. Reduce volume (2 sets per exercise), keep same weights. Sleep extra this week if possible.</div>
+          <div class="box-accent" style="margin:1rem">End of Phase 1 (Month 3) checkpoint: OHP 15–20kg heavier than Day 1 · Deadlift feeling strong · Forearm pump visible after training · Wall hold 25–30s · Partial HSPU happening · Skin much clearer · Face less puffy · Waves defined in hair.</div>
+        </div></div>
       </div>
     </div>
 
-    <!-- PHASE 4 -->
-    <div id="p4" class="phase-panel">
-      <div class="phase-meta">
-        <div class="phase-meta-item"><div class="pm-label">Focus</div><div class="pm-val">Peak — max output</div></div>
-        <div class="phase-meta-item"><div class="pm-label">Days/week</div><div class="pm-val">4 days</div></div>
-        <div class="phase-meta-item"><div class="pm-label">Session</div><div class="pm-val">50–55 min</div></div>
+  </div><!-- end month-list ph1 -->
+</div><!-- end ph1 -->
+
+<!-- ════════════ PHASE 2 ════════════ -->
+<div id="ph2" class="pp">
+  <div class="phase-meta">
+    <div class="pm-cell"><div class="pm-l">Focus</div><div class="pm-v">Build — heavier, harder variations</div></div>
+    <div class="pm-cell"><div class="pm-l">Days/week</div><div class="pm-v">4 days</div></div>
+    <div class="pm-cell"><div class="pm-l">Session</div><div class="pm-v">45–50 min</div></div>
+    <div class="pm-cell"><div class="pm-l">Weight policy</div><div class="pm-v">Progressive — push every week</div></div>
+  </div>
+  <div class="box-accent">Phase 2 shift: all movements are learned. Now you load them. Every week, add 2.5–5kg to main lifts. Supersets begin. Handstand negatives become controlled 7–8s descents. Skincare is full routine — add Alpha Arbutin for scar fading.</div>
+  <div class="month-list">
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">04</div>
+        <div class="month-info">
+          <div class="month-title">Month 4 — Load phase begins</div>
+          <div class="month-focus">4 days · Heavier compounds · Supersets introduced · Alpha Arbutin added to skincare</div>
+        </div>
+        <span class="month-badge mb-p2">Phase 2</span><span class="chev">▾</span>
       </div>
-      <div class="accent-box">This is your hardest phase. 4 heavy days. Full HSPU attempts. Forearm veins visible. Skin significantly clearer. You are no longer a beginner.</div>
-      <div class="day-grid">
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-push">Mon</div>
-            <div class="day-name">Monday — Heavy push (max strength)</div>
-            <span class="day-type-badge badge-push">Push</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell OHP — 5 sets × 3–5 reps, near max weight</div><div class="ex-detail">Strength day. Heavy. 3 min rest. This number determines your HSPU readiness.</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Floor press — 4×5 heavy</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Tricep dips — weighted (hold 2–3kg between knees)</div><div class="ex-detail">4 sets × 8</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Lateral raise — 5 sets × 12 at 3–5kg</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Handstand — 12 min</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Full HSPU attempt <span class="new-tag">unlock</span></div><div class="ex-detail">Kick up, lower slowly, push back up. If you can't full rep — do 3/4 range. Add 1cm each week. Most people hit first full HSPU in Phase 4.</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Forearm</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Full circuit — increase wrist roller weight to 3kg</div><div class="ex-detail">Veins should be visible during and after this session by now</div></div></div>
-              </div>
-            </div>
-          </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m4">
+          <button class="wtab active" onclick="showWeek('m4','w1',this)">Week 13</button>
+          <button class="wtab" onclick="showWeek('m4','w2',this)">Week 14</button>
+          <button class="wtab" onclick="showWeek('m4','w3',this)">Week 15</button>
+          <button class="wtab" onclick="showWeek('m4','w4',this)">Week 16</button>
         </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-pull">Tue</div>
-            <div class="day-name">Tuesday — Heavy pull (back + legs)</div>
-            <span class="day-type-badge badge-pull">Pull</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell deadlift — 4×4, heavy</div><div class="ex-detail">Heaviest deadlifts of the program. Controlled, no back rounding.</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Barbell squat — 3×8, heavier than Phase 3</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Bent-over row — 4×6 heavy</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Curl superset (hammer + regular) × 4 rounds</div><div class="ex-detail">Heavier dumbbells than Phase 3</div></div></div>
-                <div class="ex-item"><span class="ex-n">5</span><div class="ex-content"><div class="ex-name">Full forearm finisher</div><div class="ex-detail">Gripper + plate pinch + wrist roller</div></div></div>
-              </div>
-            </div>
-          </div>
+        <div id="m4-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 13: keep Mon Push A / Tue Pull A / Thu Push B / Fri Pull B structure. Add 5kg to deadlift, 2.5kg to OHP and row vs end of Month 3. Lateral raises move to 3–5kg with paused reps.</div>
+          <div class="box-note" style="margin:1rem">Add Alpha Arbutin 2% serum to morning routine after face wash, before moisturiser. This is the most effective ingredient for fading your acne scars and marks over the next 2–3 months.</div>
         </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Wed</div>
-            <div class="day-name">Wednesday — Rest</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="ex-list"><div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Walk + gripper + mewing + full skincare</div><div class="ex-detail">By week 10 your skin should look noticeably different. Stay consistent — don't stop now.</div></div></div></div>
-            </div>
-          </div>
+        <div id="m4-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 14: OHP paused reps start. 2s pause at bottom of each rep before pressing — eliminates momentum and builds purer strength. Start at 80% of your current OHP weight.</div>
+        </div></div>
+        <div id="m4-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 15: squat below parallel now if mobility allows. Add walking lunges (10 each leg, 3 sets) to Friday pull session — glute and quad development rounds out the lower frame.</div>
+        </div></div>
+        <div id="m4-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 16: deload. Same structure, 60% of weights. Active deload — still train, just easier.</div>
+          <div class="box-accent" style="margin:1rem">Month 4 checkpoint: Forearm veins showing during training · Scars beginning to fade with arbutin + retinol · HSPU negatives at 7–8s · Partial HSPU getting deeper range · Shoulders visibly broader.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">05</div>
+        <div class="month-info">
+          <div class="month-title">Month 5 — Volume and density</div>
+          <div class="month-focus">4 days · Higher volume · Drop sets and supersets standard · HSPU half-reps</div>
         </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-push">Thu</div>
-            <div class="day-name">Thursday — Volume push (hypertrophy)</div>
-            <span class="day-type-badge badge-push">Push</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">OHP — 4×8 (slightly lighter than Mon, more reps)</div><div class="ex-detail">Volume day builds muscle size. Monday builds strength. Both are needed.</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Weighted push-up — 5kg plate, 4×12</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Chest fly + floor press superset <span class="new-tag">new</span></div><div class="ex-detail">Fly 10 reps → immediately floor press 8 reps = 1 superset · 3 rounds</div></div></div>
-                <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Lateral raise — 5×12 with 1s pause at top</div><div class="ex-detail">Pausing at top increases time under tension significantly</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Handstand — 12 min</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Full HSPU attempts + freestanding hold attempts</div><div class="ex-detail">If wall HSPU is happening — try freestanding hold (kick up without wall). The final milestone.</div></div></div>
-              </div>
-            </div>
-          </div>
+        <span class="month-badge mb-p2">Phase 2</span><span class="chev">▾</span>
+      </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m5">
+          <button class="wtab active" onclick="showWeek('m5','w1',this)">Week 17</button>
+          <button class="wtab" onclick="showWeek('m5','w2',this)">Week 18</button>
+          <button class="wtab" onclick="showWeek('m5','w3',this)">Week 19</button>
+          <button class="wtab" onclick="showWeek('m5','w4',this)">Week 20</button>
         </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-pull">Fri</div>
-            <div class="day-name">Friday — Volume pull + full forearm day</div>
-            <span class="day-type-badge badge-pull">Pull</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="db-section-title">Training</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Romanian deadlift — 4×10 heavier</div></div></div>
-                <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Underhand row — 4×8</div></div></div>
-                <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Concentration curl — 3×12 slow</div></div></div>
-              </div>
-            </div>
-            <div class="db-section">
-              <div class="db-section-title">Forearm — full 20 min session</div>
-              <div class="ex-list">
-                <div class="ex-item"><span class="ex-n">—</span><div class="ex-content"><div class="ex-name">Gripper max × 4 sets · Wrist roller 3kg × 4 rounds · Plate pinch 45s × 3 sets · Reverse + regular wrist curl</div><div class="ex-detail">This session is responsible for most of your forearm development. Never skip it.</div></div></div>
-              </div>
-            </div>
-          </div>
+        <div id="m5-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 17: increase all main lifts by 2.5–5kg. Push sessions now have 5 exercises each. Handstand: half-range HSPU attempts (go down halfway, push back) 3×3 after controlled negatives.</div>
         </div>
-        <div class="day-card">
-          <div class="day-header" onclick="toggleDay(this)">
-            <div class="day-dot d-rest">Sat/Sun</div>
-            <div class="day-name">Weekend — Recovery + reflect</div>
-            <span class="day-type-badge badge-rest">Rest</span>
-            <span class="chevron">▾</span>
-          </div>
-          <div class="day-body">
-            <div class="db-section">
-              <div class="note-box">Take a photo on Sunday of Week 12. Compare to Day 1. After Phase 4 — repeat this block with all weights increased by 5–10%. You are now an intermediate. The plan never ends, it just keeps progressing.</div>
-            </div>
-          </div>
+        <div id="m5-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 18: chest fly + floor press superset added to Push B. 10 fly reps into 8 floor press reps immediately = 1 superset. 3 rounds. This builds chest density fast.</div>
+        </div></div>
+        <div id="m5-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 19: deadlift hits its heaviest so far. Aim for 3×5 with real effort on the 5th rep. Forearm pump should be visible at rest after training sessions by now. Wrist veins appearing.</div>
+          <div class="box-note" style="margin:1rem">Face: scars should be 40–50% lighter after consistent niacinamide + retinol + arbutin. Stay on it — the next 2 months complete the job. Dark circles visibly reduced with caffeine serum.</div>
+        </div></div>
+        <div id="m5-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 20: deload.</div>
+          <div class="box-accent" style="margin:1rem">Month 5 checkpoint: Forearm veins visible at rest after training · Scars 40–50% lighter · Half-range HSPU happening · Face noticeably thinner · Shoulders and arms significantly changed from Month 1.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">06</div>
+        <div class="month-info">
+          <div class="month-title">Month 6 — Halfway mark</div>
+          <div class="month-focus">4 days · Near-max weights · 3/4 range HSPU · Skin largely clear</div>
         </div>
+        <span class="month-badge mb-p2">Phase 2</span><span class="chev">▾</span>
+      </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m6">
+          <button class="wtab active" onclick="showWeek('m6','w1',this)">Week 21</button>
+          <button class="wtab" onclick="showWeek('m6','w2',this)">Week 22</button>
+          <button class="wtab" onclick="showWeek('m6','w3',this)">Week 23</button>
+          <button class="wtab" onclick="showWeek('m6','w4',this)">Week 24</button>
+        </div>
+        <div id="m6-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 21: OHP should be significantly heavier than Month 1 — you are now an intermediate lifter on this movement. Paused OHP stays as main pressing movement. Start HSPU at 3/4 range.</div>
+        </div>
+        <div id="m6-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 22: weighted tricep dips (hold 2–3kg between knees) added to Push A. Deadlift 4×4 on Friday for maximum strength stimulus.</div>
+        </div></div>
+        <div id="m6-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 23: add a 5th training day — Saturday becomes an optional light full-body session (30 min) focused on weak points. Squats + lateral raises + forearm circuit only. Skip if studies are heavy.</div>
+        </div></div>
+        <div id="m6-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 24: deload. Take photos on Sunday. Compare to Month 1 photos.</div>
+          <div class="box-accent" style="margin:1rem">6-month checkpoint: Forearm veins visible at rest · Shoulders significantly broader · Skin largely clear with occasional breakout only · Scars 60–70% gone · Face sharper · 3/4 range HSPU. People notice now.</div>
+        </div></div>
       </div>
     </div>
   </div>
+</div>
+
+<!-- ════════════ PHASE 3 ════════════ -->
+<div id="ph3" class="pp">
+  <div class="phase-meta">
+    <div class="pm-cell"><div class="pm-l">Focus</div><div class="pm-v">Intensify — near-max loads</div></div>
+    <div class="pm-cell"><div class="pm-l">Days/week</div><div class="pm-v">4–5 days</div></div>
+    <div class="pm-cell"><div class="pm-l">Session</div><div class="pm-v">50–55 min</div></div>
+    <div class="pm-cell"><div class="pm-l">HSPU progress</div><div class="pm-v">Full wall HSPU</div></div>
+  </div>
+  <div class="box-warn">Phase 3: you are no longer a beginner. Heavy weights, higher volume, shorter rest. This phase is where the physique truly locks in. Full wall HSPU comes in this phase. Skin is near-clear. Jaw definition visible.</div>
+  <div class="month-list">
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">07</div>
+        <div class="month-info">
+          <div class="month-title">Month 7 — Heavy phase</div>
+          <div class="month-focus">4–5 days · Near-max OHP and deadlift · Full HSPU attempts · Vitamin C serum added</div>
+        </div>
+        <span class="month-badge mb-p3">Phase 3</span><span class="chev">▾</span>
+      </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m7">
+          <button class="wtab active" onclick="showWeek('m7','w1',this)">Week 25</button>
+          <button class="wtab" onclick="showWeek('m7','w2',this)">Week 26</button>
+          <button class="wtab" onclick="showWeek('m7','w3',this)">Week 27</button>
+          <button class="wtab" onclick="showWeek('m7','w4',this)">Week 28</button>
+        </div>
+        <div id="m7-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 25: OHP 5×3–5 reps near max weight on Monday. This is the heaviest pressing you will have done. Rest 3 min between sets. The strength here directly translates to HSPU ability.</div>
+          <div class="box-note" style="margin:1rem">Skincare: add Vitamin C serum (10%) to morning routine — apply before niacinamide. Brightening + scar fading accelerator. Use Minimalist or Mamaearth brand (₹300–500).</div>
+        </div>
+        <div id="m7-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 26: full wall HSPU attempts. Kick up, lower fully (nose toward floor), push back up. If you cannot complete the rep — do the partial and continue building. Most people achieve first full rep in weeks 26–30.</div>
+        </div></div>
+        <div id="m7-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 27: dead hang practice added — find a bar or sturdy surface to hang from for 30–60s. Decompresses the spine, builds grip and shoulder stability. Pairs perfectly with HSPU training.</div>
+        </div></div>
+        <div id="m7-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 28: deload.</div>
+          <div class="box-accent" style="margin:1rem">Month 7 checkpoint: First full wall HSPU likely achieved · Scars 75–80% faded · Jaw visibly sharper from body recomposition · Wrist veins prominent at rest · Shoulders and arms clearly developed.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">08</div>
+        <div class="month-info">
+          <div class="month-title">Month 8 — Consolidate</div>
+          <div class="month-focus">5 days · Full compound strength · Multiple HSPU reps · Skin maintenance</div>
+        </div>
+        <span class="month-badge mb-p3">Phase 3</span><span class="chev">▾</span>
+      </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m8">
+          <button class="wtab active" onclick="showWeek('m8','w1',this)">Week 29</button>
+          <button class="wtab" onclick="showWeek('m8','w2',this)">Week 30</button>
+          <button class="wtab" onclick="showWeek('m8','w3',this)">Week 31</button>
+          <button class="wtab" onclick="showWeek('m8','w4',this)">Week 32</button>
+        </div>
+        <div id="m8-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 29: 5-day training week now standard. Mon Push A / Tue Pull A / Wed rest / Thu Push B / Fri Pull B / Sat optional skill + weak points. Sessions 50–55 min.</div>
+          <div class="box-note" style="margin:1rem">HSPU goal: build from 1 full rep to 3 consecutive full wall HSPU reps by end of Month 8. Practice daily — 12 min every session without fail.</div>
+        </div>
+        <div id="m8-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 30: increase all weights 2.5–5kg vs Month 7. Deadlift 4×4 at near-max on Friday. Squat 4×6 on Tuesday. These compound lifts are building your total frame density now.</div>
+        </div></div>
+        <div id="m8-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 31: introduce tempo training on isolation exercises — 4 seconds down, 1 second up on all curls and lateral raises. This massively increases muscle recruitment without adding weight.</div>
+        </div></div>
+        <div id="m8-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 32: deload.</div>
+          <div class="box-accent" style="margin:1rem">Month 8 checkpoint: 3 consecutive full wall HSPU · Deadlift and squat significantly strong · Skin in full maintenance mode (clear with consistent routine) · Body visibly different from any angle. You are intermediate level.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">09</div>
+        <div class="month-info">
+          <div class="month-title">Month 9 — Peak Phase 3</div>
+          <div class="month-focus">5 days · Maximum Phase 3 loads · Freestanding handstand work · Full skin clarity</div>
+        </div>
+        <span class="month-badge mb-p3">Phase 3</span><span class="chev">▾</span>
+      </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m9">
+          <button class="wtab active" onclick="showWeek('m9','w1',this)">Week 33</button>
+          <button class="wtab" onclick="showWeek('m9','w2',this)">Week 34</button>
+          <button class="wtab" onclick="showWeek('m9','w3',this)">Week 35</button>
+          <button class="wtab" onclick="showWeek('m9','w4',this)">Week 36</button>
+        </div>
+        <div id="m9-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 33: attempt freestanding handstand kick-ups (away from wall). You won't hold it — the goal is 1–2 seconds of balance. This is the skill practice that leads to freestanding HSPU eventually.</div>
+        </div>
+        <div id="m9-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 34: heaviest OHP, deadlift, and squat of the entire year so far. Track your numbers — you will be shocked comparing to Month 1.</div>
+        </div></div>
+        <div id="m9-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 35: add cable-like resistance to lateral raises — loop a resistance band under your foot and hold the other end. Constant tension throughout the rep = better shoulder development.</div>
+        </div></div>
+        <div id="m9-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 36: deload. This is also a full rest week from HSPU skill work — let the shoulders fully recover before Phase 4.</div>
+          <div class="box-accent" style="margin:1rem">End of Phase 3 checkpoint: 5+ wall HSPU reps · Freestanding handstand attempts happening · Skin completely clear in maintenance mode · Scars 85–90% gone · Jaw sharply defined · Frame is the Kole404 target. One phase left.</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════ PHASE 4 ════════════ -->
+<div id="ph4" class="pp">
+  <div class="phase-meta">
+    <div class="pm-cell"><div class="pm-l">Focus</div><div class="pm-v">Master — advanced everything</div></div>
+    <div class="pm-cell"><div class="pm-l">Days/week</div><div class="pm-v">5 days</div></div>
+    <div class="pm-cell"><div class="pm-l">Session</div><div class="pm-v">55–60 min</div></div>
+    <div class="pm-cell"><div class="pm-l">HSPU goal</div><div class="pm-v">Freestanding attempts</div></div>
+  </div>
+  <div class="box-accent">Phase 4: the final phase. You have a real physique now. The goal is to push every number to its highest, solidify the HSPU, and lock in habits that last beyond 12 months. This is not an ending — it is your permanent baseline.</div>
+  <div class="month-list">
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">10</div>
+        <div class="month-info">
+          <div class="month-title">Month 10 — Max strength</div>
+          <div class="month-focus">5 days · Heaviest loads of the year · 8+ wall HSPU · Freestanding hold attempts</div>
+        </div>
+        <span class="month-badge mb-p4">Phase 4</span><span class="chev">▾</span>
+      </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m10">
+          <button class="wtab active" onclick="showWeek('m10','w1',this)">Week 37</button>
+          <button class="wtab" onclick="showWeek('m10','w2',this)">Week 38</button>
+          <button class="wtab" onclick="showWeek('m10','w3',this)">Week 39</button>
+          <button class="wtab" onclick="showWeek('m10','w4',this)">Week 40</button>
+        </div>
+        <div id="m10-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 37: every compound lift at highest weight of the year. OHP 5×3 near absolute max. Deadlift 4×3 heavy. Squat 4×5 heavy. Rest 3–4 min between heavy sets. These sessions are demanding — sleep 8h and eat protein religiously.</div>
+        </div>
+        <div id="m10-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 38: freestanding handstand holds — 5 min dedicated practice daily on top of regular training. Kick up, find the balance point, hold. This is purely skill and takes daily consistent practice. No shortcut.</div>
+        </div></div>
+        <div id="m10-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 39: add dumbbell lateral raise burnout set at end of every push session — 1kg, max reps, no rest, until failure. This is not strength training, it is a finishing technique for shoulder endurance and definition.</div>
+        </div></div>
+        <div id="m10-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 40: deload.</div>
+          <div class="box-accent" style="margin:1rem">Month 10 checkpoint: 8+ wall HSPU reps · Freestanding hold reaching 3–5 seconds · Body fat naturally lower from muscle gain · Face at its sharpest · You look completely different from 10 months ago.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">11</div>
+        <div class="month-info">
+          <div class="month-title">Month 11 — Refine everything</div>
+          <div class="month-focus">5 days · Volume + strength combined · Freestanding HSPU progress · Skin in perfect maintenance</div>
+        </div>
+        <span class="month-badge mb-p4">Phase 4</span><span class="chev">▾</span>
+      </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m11">
+          <button class="wtab active" onclick="showWeek('m11','w1',this)">Week 41</button>
+          <button class="wtab" onclick="showWeek('m11','w2',this)">Week 42</button>
+          <button class="wtab" onclick="showWeek('m11','w3',this)">Week 43</button>
+          <button class="wtab" onclick="showWeek('m11','w4',this)">Week 44</button>
+        </div>
+        <div id="m11-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 41: combine heavy and volume in the same session — 3 heavy sets (3–5 reps) then 2 volume sets (8–10 reps) on OHP, deadlift, and row. This dual stimulus builds both strength and size simultaneously.</div>
+        </div>
+        <div id="m11-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 42: push forearm work to peak — wrist roller weight at 3kg, 5 rounds. Gripper 5 sets max. Plate pinch 60s holds. By now forearm veins should be visible at rest on both arms consistently.</div>
+        </div></div>
+        <div id="m11-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 43: HSPU goal — attempt freestanding HSPU. You have the strength. The wall is a crutch now. Kick up, find balance, attempt the press. This may take several more weeks but the attempt itself is progress.</div>
+        </div></div>
+        <div id="m11-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 44: deload. Rest the shoulders well for the final month.</div>
+          <div class="box-accent" style="margin:1rem">Month 11: you have the physique. Everything is about refinement now. Forearms are thick and vascular, shoulders are broad, face is sharp, skin is clean, hair is under control. One month to consolidate.</div>
+        </div></div>
+      </div>
+    </div>
+
+    <div class="month-card">
+      <div class="month-header" onclick="toggleMonth(this)">
+        <div class="month-num">12</div>
+        <div class="month-info">
+          <div class="month-title">Month 12 — The final month</div>
+          <div class="month-focus">5 days · Peak of everything · Maintain and lock in · This is your new baseline forever</div>
+        </div>
+        <span class="month-badge mb-p4">Phase 4</span><span class="chev">▾</span>
+      </div>
+      <div class="month-body">
+        <div class="week-tabs" id="wt-m12">
+          <button class="wtab active" onclick="showWeek('m12','w1',this)">Week 45</button>
+          <button class="wtab" onclick="showWeek('m12','w2',this)">Week 46</button>
+          <button class="wtab" onclick="showWeek('m12','w3',this)">Week 47</button>
+          <button class="wtab" onclick="showWeek('m12','w4',this)">Week 48</button>
+        </div>
+        <div id="m12-w1" class="wp active">
+          <div class="box-warn" style="margin:1rem">Week 45: final push on all numbers. OHP, deadlift, squat at absolute peak weights. Track everything — you will want these numbers as your baseline for the next year.</div>
+        </div>
+        <div id="m12-w2" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 46: HSPU consolidation. 10+ wall HSPU reps target. If freestanding HSPU hasn't happened yet — it will come in the months ahead. You have the strength. Skill just needs more daily practice time.</div>
+        </div></div>
+        <div id="m12-w3" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 47: write down your current weights on all lifts. Take photos. This is your official 12-month transformation benchmark. These numbers and photos are your proof of what consistent work produces.</div>
+        </div></div>
+        <div id="m12-w4" class="wp"><div class="day-list">
+          <div class="box-warn" style="margin:1rem">Week 48: final deload. Reflect. Rest.</div>
+          <div class="box-accent" style="margin:1rem">12-month final: You are an intermediate lifter with a strong, lean frame. Broad shoulders, thick vascular forearms, defined jaw, clear skin, controlled hair. The Kole404 physique is yours. Now repeat Phase 4 with higher weights — there is no finish line.</div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end wrap plan -->
 </section>
 
 <!-- NUTRITION -->
 <section id="nutrition">
-  <div class="fade-in">
-    <div class="section-label">Nutrition</div>
-    <div class="section-title">Eat like this</div>
-    <div class="section-sub">Indian food is not a disadvantage — you just need to consciously add protein. Target 115–130g every day without exception.</div>
-
-    <div class="food-grid">
-      <div class="food-card">
-        <div class="food-card-title">Best sources</div>
-        <div class="food-item"><div><div>Chicken breast (150g cooked)</div></div><span class="food-protein">40g</span></div>
-        <div class="food-item"><div><div>Paneer (100g)</div></div><span class="food-protein">18g</span></div>
-        <div class="food-item"><div><div>Eggs (3 whole)</div></div><span class="food-protein">18g</span></div>
-        <div class="food-item"><div><div>Soya chunks (30g dry)</div></div><span class="food-protein">15g</span></div>
-        <div class="food-item"><div><div>Curd / dahi (200g)</div></div><span class="food-protein">13g</span></div>
-        <div class="food-item"><div><div>Milk (250ml glass)</div></div><span class="food-protein">8g</span></div>
-        <div class="food-item"><div><div>Peanuts (30g handful)</div></div><span class="food-protein">8g</span></div>
-        <div class="food-item"><div><div>Chana / rajma (100g cooked)</div></div><span class="food-protein">8g</span></div>
-        <div class="food-item"><div><div>Moong dal (100g cooked)</div></div><span class="food-protein">7g</span></div>
-      </div>
-      <div class="food-card">
-        <div class="food-card-title">Skin foods</div>
-        <div class="food-item"><div><div>Pumpkin seeds (handful)</div><div class="food-note">Zinc — directly reduces acne</div></div></div>
-        <div class="food-item"><div><div>Walnuts (5–6 daily)</div><div class="food-note">Omega-3 — reduces inflammation</div></div></div>
-        <div class="food-item"><div><div>Amla (1 daily)</div><div class="food-note">Vitamin C — scar healing + collagen</div></div></div>
-        <div class="food-item"><div><div>Flaxseeds (1 tbsp)</div><div class="food-note">Omega-3 — skin texture improvement</div></div></div>
-        <div class="food-item"><div><div>Tomatoes daily</div><div class="food-note">Lycopene — skin protection from UV</div></div></div>
-        <div class="food-card-title" style="margin-top:1rem">Cut these</div>
-        <div class="food-item"><div><div>Maida / packaged biscuits</div><div class="food-note">High glycemic → more acne + fat storage</div></div></div>
-        <div class="food-item"><div><div>Chai with 2+ tsp sugar × 4 cups</div><div class="food-note">Adds 50–80g sugar/day — switch to 1 tsp</div></div></div>
-        <div class="food-item"><div><div>Cold drinks + packaged juice</div><div class="food-note">Liquid sugar — destroys skin and fat loss</div></div></div>
-        <div class="food-item"><div><div>Excess salt / packaged chips</div><div class="food-note">High sodium → water retention → puffy face</div></div></div>
-      </div>
+<div class="wrap fade">
+  <div class="s-label">Nutrition</div>
+  <div class="s-title">Eat like this</div>
+  <div class="s-sub">Indian food is not a disadvantage — you just need to consciously add protein to every meal. Hit 115–130g every single day without exception.</div>
+  <div class="food-grid">
+    <div class="food-card">
+      <div class="food-card-title">Best protein sources</div>
+      <div class="f-item"><div>Chicken breast (150g cooked)</div><span class="f-protein">40g</span></div>
+      <div class="f-item"><div>Paneer (100g)</div><span class="f-protein">18g</span></div>
+      <div class="f-item"><div>Eggs (3 whole)</div><span class="f-protein">18g</span></div>
+      <div class="f-item"><div>Soya chunks (30g dry)</div><span class="f-protein">15g</span></div>
+      <div class="f-item"><div>Curd / dahi (200g)</div><span class="f-protein">13g</span></div>
+      <div class="f-item"><div>Milk (250ml glass)</div><span class="f-protein">8g</span></div>
+      <div class="f-item"><div>Peanuts (30g handful)</div><span class="f-protein">8g</span></div>
+      <div class="f-item"><div>Chana / rajma (100g cooked)</div><span class="f-protein">8g</span></div>
+      <div class="f-item"><div>Moong dal (100g cooked)</div><span class="f-protein">7g</span></div>
     </div>
-
-    <div class="sample-day">
-      <div class="sd-header">Sample day — budget-friendly, Dehradun</div>
-      <div class="sd-row"><span class="sd-time">7 AM</span><div class="sd-meal">3 boiled eggs + 1 glass milk</div><span class="sd-protein">~30g</span></div>
-      <div class="sd-row"><span class="sd-time">1 PM</span><div class="sd-meal">Rice + dal + 100g paneer or chicken + 1 bowl curd</div><span class="sd-protein">~45g</span></div>
-      <div class="sd-row"><span class="sd-time">4 PM</span><div class="sd-meal">30g peanuts + 1 glass milk</div><span class="sd-protein">~16g</span></div>
-      <div class="sd-row"><span class="sd-time">8 PM</span><div class="sd-meal">2 roti + 150g chicken or soya chunks curry</div><span class="sd-protein">~35g</span></div>
-      <div class="sd-row sd-total"><span class="sd-time">Total</span><div class="sd-meal">All from normal Indian food — no protein powder needed</div><span class="sd-protein">~126g</span></div>
+    <div class="food-card">
+      <div class="food-card-title">Skin foods</div>
+      <div class="f-item"><div><div>Pumpkin seeds (handful)</div><div class="f-note">Zinc — directly reduces acne</div></div></div>
+      <div class="f-item"><div><div>Walnuts (5–6 daily)</div><div class="f-note">Omega-3 — reduces inflammation</div></div></div>
+      <div class="f-item"><div><div>Amla (1 daily)</div><div class="f-note">Vitamin C — scar healing + collagen</div></div></div>
+      <div class="f-item"><div><div>Tomatoes</div><div class="f-note">Lycopene — UV skin protection</div></div></div>
+      <div class="food-card-title" style="margin-top:1rem">Cut these</div>
+      <div class="f-item"><div><div>Maida / packaged biscuits</div><div class="f-note">High glycemic → acne + fat storage</div></div></div>
+      <div class="f-item"><div><div>Chai with 2+ tsp sugar × 4 cups</div><div class="f-note">50–80g hidden sugar daily — cut to 1 tsp</div></div></div>
+      <div class="f-item"><div><div>Cold drinks + packaged juice</div><div class="f-note">Liquid sugar — damages skin and progress</div></div></div>
+      <div class="f-item"><div><div>Excess salt</div><div class="f-note">Sodium → water retention → puffy face</div></div></div>
     </div>
   </div>
+  <div class="sample-day">
+    <div class="sd-head">Sample day — budget-friendly, Dehradun</div>
+    <div class="sd-row"><span class="sd-t">7 AM</span><div class="sd-m">3 boiled eggs + 1 glass milk</div><span class="sd-p">~30g</span></div>
+    <div class="sd-row"><span class="sd-t">1 PM</span><div class="sd-m">Rice + dal + 100g paneer or chicken + 1 bowl curd</div><span class="sd-p">~45g</span></div>
+    <div class="sd-row"><span class="sd-t">4 PM</span><div class="sd-m">30g peanuts + 1 glass milk</div><span class="sd-p">~16g</span></div>
+    <div class="sd-row"><span class="sd-t">8 PM</span><div class="sd-m">2 roti + 150g chicken or soya chunks curry</div><span class="sd-p">~35g</span></div>
+    <div class="sd-row sd-total"><span class="sd-t">Total</span><div class="sd-m">No protein powder needed — all normal Indian food</div><span class="sd-p">~126g</span></div>
+  </div>
+</div>
 </section>
 
-<!-- GOALS / PROBLEMS -->
-<section id="problems">
-  <div class="fade-in">
-    <div class="section-label">Problem → Solution</div>
-    <div class="section-title">Every goal addressed</div>
-    <div class="section-sub">Each problem broken down with its cause, solution, and exactly what to do about it.</div>
-
-    <div class="problem-grid">
-
-      <div class="problem-card">
-        <div class="problem-header" onclick="toggleProblem(this)">
-          <div class="problem-icon" style="background:rgba(100,181,246,0.1)">💪</div>
-          <div class="problem-title">Thin wrists — no forearm definition</div>
-          <span class="chevron">▾</span>
-        </div>
-        <div class="problem-body">
-          <p style="color:var(--muted);font-size:13px;margin-bottom:1rem">Wrists are mostly bone and tendon — they don't bulk up. But the forearm muscles that wrap around them grow visibly, and lower body fat makes veins surface. At 72kg / 5'11" you're lean enough — it's a muscle-fill problem.</p>
-          <div style="font-size:11px;color:var(--accent);text-transform:uppercase;letter-spacing:.1em;font-family:var(--font-mono);margin-bottom:.75rem">The 7 exercises that fix this</div>
-          <div class="ex-list">
-            <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Gripper (150lbs) — daily habit</div><div class="ex-detail">3 sets × max reps each hand · Every single day, even rest days · Squeeze fully, 3-count release</div></div></div>
-            <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Dumbbell hammer curl</div><div class="ex-detail">3×12 · Neutral grip (thumb up) · Hits brachialis + brachioradialis — the muscles that make forearms thick and vascular</div></div></div>
-            <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Wrist curl — palm up</div><div class="ex-detail">3×15 · Forearm on thigh, curl wrist up · Inner forearm development</div></div></div>
-            <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Reverse wrist curl — palm down</div><div class="ex-detail">3×15 · Outer forearm — makes arm look wider from front</div></div></div>
-            <div class="ex-item"><span class="ex-n">5</span><div class="ex-content"><div class="ex-name">DIY wrist roller</div><div class="ex-detail">Tie 2kg weight to barbell with 1m rope · Hold barbell at shoulder height · Roll weight up and down × 3 rounds · Brutal and highly effective</div></div></div>
-            <div class="ex-item"><span class="ex-n">6</span><div class="ex-content"><div class="ex-name">Plate pinch hold</div><div class="ex-detail">Pinch 2kg plate with fingers × 30–45s holds · 3 sets · Builds finger and wrist tendon thickness directly</div></div></div>
-            <div class="ex-item"><span class="ex-n">7</span><div class="ex-content"><div class="ex-name">Barbell deadlift</div><div class="ex-detail">3×8 every pull day · The single best compound exercise for forearm and grip development — nothing else comes close</div></div></div>
-          </div>
+<!-- GOALS -->
+<section id="goals">
+<div class="wrap fade">
+  <div class="s-label">Problem → Solution</div>
+  <div class="s-title">Every goal addressed</div>
+  <div class="s-sub">Each specific problem with its cause, exact solution, and what to do about it.</div>
+  <div class="prob-grid">
+    <div class="prob-card">
+      <div class="prob-hd" onclick="toggleProb(this)">
+        <div class="prob-icon" style="background:rgba(100,181,246,0.08)">💪</div>
+        <div class="prob-title">Thin wrists — no forearm vascularity</div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="prob-body">
+        <p style="color:var(--muted);font-size:13px;margin-bottom:1rem;line-height:1.7">Wrists are mostly bone — they don't bulk up. But the forearm muscles that wrap around them grow visibly, and as body fat normalises the veins surface. You're lean enough. This is a muscle-fill problem.</p>
+        <div class="ex-list">
+          <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Gripper (150lbs) — daily habit forever</div><div class="ex-det">3 sets × max reps each hand every single day including rest days · Full squeeze, 3-count release</div></div></div>
+          <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Dumbbell hammer curl</div><div class="ex-det">Neutral grip · The #1 forearm thickness builder · 3×12 every pull day</div></div></div>
+          <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Wrist curl (palm up) + Reverse wrist curl (palm down)</div><div class="ex-det">3×15 each · Inner and outer forearm trained equally</div></div></div>
+          <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">DIY wrist roller</div><div class="ex-det">2kg weight on rope tied to barbell · Roll up and down 3–5 rounds every session</div></div></div>
+          <div class="ex-row"><span class="ex-n">5</span><div><div class="ex-name">Barbell deadlift</div><div class="ex-det">The single best compound movement for grip and forearm development — every pull day</div></div></div>
         </div>
       </div>
-
-      <div class="problem-card">
-        <div class="problem-header" onclick="toggleProblem(this)">
-          <div class="problem-icon" style="background:rgba(200,245,100,0.1)">🎯</div>
-          <div class="problem-title">No strong frame — the Kole404 physique</div>
-          <span class="chevron">▾</span>
-        </div>
-        <div class="problem-body">
-          <p style="color:var(--muted);font-size:13px;margin-bottom:1rem">That look is lean + functional — not bulky. At your height and weight you're already close to the frame. The gap is muscle density — especially shoulders, upper back, and forearms. You don't need to bulk aggressively.</p>
-          <div class="ex-list">
-            <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Barbell overhead press — your #1 exercise</div><div class="ex-detail">4×6–8 heavy · Most important for shoulder width and the overall "frame" look · Progress this every week</div></div></div>
-            <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Dumbbell lateral raise — done correctly</div><div class="ex-detail">4×15 · Slow and controlled only. Swinging is wasted time. This shapes the shoulder cap that makes you look wide from the front.</div></div></div>
-            <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Barbell bent-over row — back thickness</div><div class="ex-detail">4×8 · Good posture from a strong back alone changes how your frame looks dramatically</div></div></div>
-            <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Floor press — chest development</div><div class="ex-detail">3×8 safely without a rack · Chest + triceps</div></div></div>
-            <div class="ex-item"><span class="ex-n">5</span><div class="ex-content"><div class="ex-name">Barbell squat — don't skip legs</div><div class="ex-detail">3×10 minimum every week · Prevents the "top-heavy only" look · Also releases testosterone</div></div></div>
-          </div>
+    </div>
+    <div class="prob-card">
+      <div class="prob-hd" onclick="toggleProb(this)">
+        <div class="prob-icon" style="background:rgba(200,245,100,0.08)">🎯</div>
+        <div class="prob-title">Building the Kole404 frame</div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="prob-body">
+        <p style="color:var(--muted);font-size:13px;margin-bottom:1rem;line-height:1.7">That look is lean + functional — not bulky. At your height and current weight you are close to the frame already. The gap is muscle density, especially shoulders and upper back. Don't bulk aggressively.</p>
+        <div class="ex-list">
+          <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Barbell overhead press — your single most important exercise</div><div class="ex-det">Heavy, every week, progressive. This builds shoulder width and the entire upper frame look.</div></div></div>
+          <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Dumbbell lateral raise — done slowly</div><div class="ex-det">3–5s eccentrics only. This is what builds the shoulder cap that makes you look wide from the front.</div></div></div>
+          <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Barbell bent-over row</div><div class="ex-det">Back thickness + posture. Good posture alone changes how your frame looks dramatically.</div></div></div>
+          <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Barbell squat</div><div class="ex-det">Prevents the top-heavy only look. Also the biggest testosterone-releasing exercise in your arsenal.</div></div></div>
         </div>
       </div>
-
-      <div class="problem-card">
-        <div class="problem-header" onclick="toggleProblem(this)">
-          <div class="problem-icon" style="background:rgba(255,183,77,0.1)">🤸</div>
-          <div class="problem-title">Handstand push-up — full progression</div>
-          <span class="chevron">▾</span>
-        </div>
-        <div class="problem-body">
-          <p style="color:var(--muted);font-size:13px;margin-bottom:1rem">The strength is the easier part. The harder part is balance and body awareness inverted. Do 5 minutes every single day regardless of whether you're training.</p>
-          <div class="ex-list">
-            <div class="ex-item"><span class="ex-n">Wk 1–4</span><div class="ex-content"><div class="ex-name">Pike push-up (feet on floor) + wall kick-up hold</div><div class="ex-detail">3×8 pike · Wall hold: 3× max (even 2s is fine) · Teaches movement pattern and wrist stability</div></div></div>
-            <div class="ex-item"><span class="ex-n">Wk 5–8</span><div class="ex-content"><div class="ex-name">Elevated pike push-up (feet on chair) + wall hold 15s+</div><div class="ex-detail">More vertical angle = more shoulder load · Start first negatives: kick up, lower slowly 3–5s, drop</div></div></div>
-            <div class="ex-item"><span class="ex-n">Wk 8–12</span><div class="ex-content"><div class="ex-name">Controlled negatives (5–8s) + partial range HSPU</div><div class="ex-detail">Kick up, lower head to floor in 5–8s. 5 reps. Then partial: go 1/3 down, push back. Add range weekly.</div></div></div>
-            <div class="ex-item"><span class="ex-n">Wk 10+</span><div class="ex-content"><div class="ex-name">Full wall HSPU attempts</div><div class="ex-detail">Full range — nose to floor and back up. Most people hit this between week 10–16 with consistent daily practice.</div></div></div>
-          </div>
+    </div>
+    <div class="prob-card">
+      <div class="prob-hd" onclick="toggleProb(this)">
+        <div class="prob-icon" style="background:rgba(255,183,77,0.08)">🤸</div>
+        <div class="prob-title">Handstand push-up — full progression</div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="prob-body">
+        <p style="color:var(--muted);font-size:13px;margin-bottom:1rem;line-height:1.7">The strength is easier than the skill. Do 5–12 min of handstand practice every single day — even rest days. Skill needs daily repetition, not occasional heavy sessions.</p>
+        <div class="ex-list">
+          <div class="ex-row"><span class="ex-n">Mo 1–2</span><div><div class="ex-name">Pike push-up + wall kick-up hold</div><div class="ex-det">Learn the pattern. Wall hold: even 2–3 seconds counts.</div></div></div>
+          <div class="ex-row"><span class="ex-n">Mo 3–4</span><div><div class="ex-name">Elevated pike push-up + controlled negatives (5s)</div><div class="ex-det">Feet on chair for more shoulder load. Negatives build the push-up strength.</div></div></div>
+          <div class="ex-row"><span class="ex-n">Mo 5–6</span><div><div class="ex-name">Partial HSPU (1/3 to 1/2 range)</div><div class="ex-det">Deepen the range each week. Wall hold at 45s+.</div></div></div>
+          <div class="ex-row"><span class="ex-n">Mo 7–8</span><div><div class="ex-name">Full wall HSPU — first rep achieved</div><div class="ex-det">Nose to floor, push back up. Build from 1 rep to 8+ reps.</div></div></div>
+          <div class="ex-row"><span class="ex-n">Mo 10–12</span><div><div class="ex-name">Freestanding handstand hold + HSPU attempts</div><div class="ex-det">Away from wall. 3–5 second holds → full freestanding HSPU is the ultimate goal beyond 12 months.</div></div></div>
         </div>
       </div>
-
-      <div class="problem-card">
-        <div class="problem-header" onclick="toggleProblem(this)">
-          <div class="problem-icon" style="background:rgba(239,83,80,0.1)">✦</div>
-          <div class="problem-title">Fat cheeks — undefined jaw</div>
-          <span class="chevron">▾</span>
-        </div>
-        <div class="problem-body">
-          <p style="color:var(--muted);font-size:13px;margin-bottom:1rem">You cannot spot-reduce face fat. But as you build muscle your body composition improves and face fat naturally reduces. The biggest offender: high sodium (puffy face). Reduce salt immediately.</p>
-          <div class="ex-list">
-            <div class="ex-item"><span class="ex-n">1</span><div class="ex-content"><div class="ex-name">Mewing — tongue posture (all day, every day)</div><div class="ex-detail">Tongue flat on roof of mouth at all times. This is a posture habit. Results at 6–12 months.</div></div></div>
-            <div class="ex-item"><span class="ex-n">2</span><div class="ex-content"><div class="ex-name">Jaw chewing — hard foods</div><div class="ex-detail">Sugarfree mastic gum or hard fruits (apple, carrot) daily · Exercises masseter muscle · More defined jaw angle over months</div></div></div>
-            <div class="ex-item"><span class="ex-n">3</span><div class="ex-content"><div class="ex-name">Chin tucks — 3×10 daily</div><div class="ex-detail">Pull chin straight back (not down), hold 5s · Strengthens neck, improves jawline from side and front</div></div></div>
-            <div class="ex-item"><span class="ex-n">4</span><div class="ex-content"><div class="ex-name">Cut sodium + drink 3L water</div><div class="ex-detail">Less salt = less face puffiness — visible difference in 2–3 weeks</div></div></div>
-          </div>
+    </div>
+    <div class="prob-card">
+      <div class="prob-hd" onclick="toggleProb(this)">
+        <div class="prob-icon" style="background:rgba(239,83,80,0.08)">✦</div>
+        <div class="prob-title">Fat cheeks — undefined jaw</div>
+        <span class="chev">▾</span>
+      </div>
+      <div class="prob-body">
+        <p style="color:var(--muted);font-size:13px;margin-bottom:1rem;line-height:1.7">Cannot spot-reduce face fat. But as muscle grows, body composition improves and face fat reduces naturally. The biggest immediate fix: cut sodium. High salt = water retention = puffy face.</p>
+        <div class="ex-list">
+          <div class="ex-row"><span class="ex-n">1</span><div><div class="ex-name">Mewing — all day, every day, forever</div><div class="ex-det">Tongue flat against roof of mouth. Becomes habit in 2–3 weeks. Results visible at 6+ months.</div></div></div>
+          <div class="ex-row"><span class="ex-n">2</span><div><div class="ex-name">Jaw chewing — sugarfree gum or hard fruits</div><div class="ex-det">Daily while studying. Works masseter muscle over months. More defined jaw angle.</div></div></div>
+          <div class="ex-row"><span class="ex-n">3</span><div><div class="ex-name">Chin tucks — 3×10 daily</div><div class="ex-det">Pull chin straight back, hold 5s. Strengthens neck, improves jaw appearance from front and side.</div></div></div>
+          <div class="ex-row"><span class="ex-n">4</span><div><div class="ex-name">Cut sodium + drink 3L water</div><div class="ex-det">Visible face puffiness reduction in 2–3 weeks of lower sodium.</div></div></div>
         </div>
       </div>
-
     </div>
   </div>
+</div>
 </section>
 
 <!-- SKINCARE -->
 <section id="skin">
-  <div class="fade-in">
-    <div class="section-label">Skincare</div>
-    <div class="section-title">Fix every skin problem</div>
-    <div class="section-sub">Four separate problems — acne, scars, dark circles, and jawline definition — each with its own approach and products.</div>
-
-    <div class="routine-grid">
-      <div class="routine-card">
-        <div class="rc-head">
-          <div class="rc-title">Morning routine</div>
-          <div class="rc-sub">Every single morning — no exceptions</div>
-        </div>
-        <div class="rc-body">
-          <div class="rc-row"><span class="rc-time">Step 1</span><div><strong>Gentle face wash</strong> — lukewarm water, pat dry, don't rub</div></div>
-          <div class="rc-row"><span class="rc-time">Step 2</span><div><strong>Niacinamide 10% serum</strong> — 2–3 drops, entire face. Wait 1 min to dry.</div></div>
-          <div class="rc-row"><span class="rc-time">Step 3</span><div><strong>Moisturiser</strong> — non-comedogenic only</div></div>
-          <div class="rc-row"><span class="rc-time">Step 4</span><div><strong>SPF 50</strong> (already have) — never skip this. UV darkens all scars and marks.</div></div>
-        </div>
-      </div>
-      <div class="routine-card">
-        <div class="rc-head">
-          <div class="rc-title">Night routine</div>
-          <div class="rc-sub">Every night — never sleep with sunscreen on</div>
-        </div>
-        <div class="rc-body">
-          <div class="rc-row"><span class="rc-time">Step 1</span><div><strong>Gentle face wash</strong> — remove all dirt, sweat, sunscreen</div></div>
-          <div class="rc-row"><span class="rc-time">Step 2</span><div><strong>Niacinamide serum</strong> — every night</div></div>
-          <div class="rc-row"><span class="rc-time">Step 3</span><div><strong>Retinol 0.1%</strong> — Mon + Thu nights only (from Week 4) · After niacinamide dries</div></div>
-          <div class="rc-row"><span class="rc-time">Step 4</span><div><strong>Moisturiser</strong> — thicker layer than morning</div></div>
-          <div class="rc-row"><span class="rc-time">Step 5</span><div><strong>8h sleep</strong> — most underrated skincare product</div></div>
-        </div>
+<div class="wrap fade">
+  <div class="s-label">Skincare</div>
+  <div class="s-title">Clean skin, fixed</div>
+  <div class="s-sub">Four separate problems — acne, scars, dark circles, jaw definition — each with its own solution and products. All Minimalist brand products are same-ingredient as expensive Western brands at 1/5th the cost.</div>
+  <div class="routine-grid">
+    <div class="rc">
+      <div class="rc-head"><div class="rc-title">Morning</div><div class="rc-sub">Every single morning without exception</div></div>
+      <div class="rc-body">
+        <div class="rc-row"><span class="rc-t">Step 1</span><div><strong>Gentle face wash</strong> — lukewarm water, pat dry, never rub</div></div>
+        <div class="rc-row"><span class="rc-t">Step 2</span><div><strong>Vitamin C 10%</strong> (Month 7+) — brightening + scar fading</div></div>
+        <div class="rc-row"><span class="rc-t">Step 3</span><div><strong>Alpha Arbutin 2%</strong> (Month 4+) — pigmentation and scar fading</div></div>
+        <div class="rc-row"><span class="rc-t">Step 4</span><div><strong>Niacinamide 10% + Zinc</strong> — every morning from Day 1</div></div>
+        <div class="rc-row"><span class="rc-t">Step 5</span><div><strong>Moisturiser</strong></div></div>
+        <div class="rc-row"><span class="rc-t">Step 6</span><div><strong>SPF 50</strong> — every morning, no exceptions, reapply outdoors</div></div>
       </div>
     </div>
-
-    <div style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:1rem">Products to buy</div>
-    <div class="product-list">
-      <div class="product-item">
-        <span class="product-priority p-now">Buy now</span>
-        <div>
-          <div class="product-name">Gentle face wash</div>
-          <div class="product-note">CeraVe Foaming, Cetaphil, or Himalaya Neem face wash · Available at any pharmacy in Dehradun · ₹150–400 · Never use soap on face</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-now">Buy now</span>
-        <div>
-          <div class="product-name">Minimalist Niacinamide 10% + Zinc</div>
-          <div class="product-note">₹349 · Amazon India · Best value product available — same ingredient as expensive brands at 1/5th the price · Tackles acne, dark spots, oiliness simultaneously</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-next">Buy next</span>
-        <div>
-          <div class="product-name">Non-comedogenic moisturiser</div>
-          <div class="product-note">Neutrogena Hydro Boost or Minimalist Squalane Moisturiser · ₹400–700 · Won't clog pores</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-later">Month 2</span>
-        <div>
-          <div class="product-name">Minimalist Retinol 0.2%</div>
-          <div class="product-note">₹399 · Night only · 2×/week to start · Speeds up cell turnover = faster scar healing + better texture · Don't start before Week 4</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-later">Month 2</span>
-        <div>
-          <div class="product-name">Minimalist Caffeine Solution 5% (eye serum)</div>
-          <div class="product-note">₹349 · For genetic dark circles — reduces puffiness and the shadow effect · Pat gently under eyes in morning</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-later">Month 2+</span>
-        <div>
-          <div class="product-name">Minimalist Alpha Arbutin 2%</div>
-          <div class="product-note">₹319 · Potent pigmentation fader · Use in morning after cleansing · For acne scars and marks</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-have">Already have</span>
-        <div>
-          <div class="product-name">SPF 50 sunscreen</div>
-          <div class="product-note">Use it every morning without fail · Reapply if outdoors · UV is the single biggest cause of marks darkening</div>
-        </div>
+    <div class="rc">
+      <div class="rc-head"><div class="rc-title">Night</div><div class="rc-sub">Never sleep with sunscreen or sweat on face</div></div>
+      <div class="rc-body">
+        <div class="rc-row"><span class="rc-t">Step 1</span><div><strong>Gentle face wash</strong> — remove everything</div></div>
+        <div class="rc-row"><span class="rc-t">Step 2</span><div><strong>Niacinamide serum</strong> — every night</div></div>
+        <div class="rc-row"><span class="rc-t">Step 3</span><div><strong>Retinol 0.1%</strong> (Week 5+) — Mon + Thu nights only · After niacinamide dries</div></div>
+        <div class="rc-row"><span class="rc-t">Step 4</span><div><strong>Caffeine eye serum</strong> — pat under eyes gently</div></div>
+        <div class="rc-row"><span class="rc-t">Step 5</span><div><strong>Moisturiser</strong> — thicker layer than morning</div></div>
+        <div class="rc-row"><span class="rc-t">Step 6</span><div><strong>8h sleep</strong> — the most underrated skincare product</div></div>
       </div>
     </div>
   </div>
+  <div class="prod-list">
+    <div class="prod-item"><span class="ppri pp-now">Buy now</span><div><div class="prod-name">Gentle face wash</div><div class="prod-note">CeraVe Foaming, Cetaphil, or Himalaya Neem · ₹150–400 · Any local pharmacy in Dehradun · Never use soap</div></div></div>
+    <div class="prod-item"><span class="ppri pp-now">Buy now</span><div><div class="prod-name">Minimalist Niacinamide 10% + Zinc</div><div class="prod-note">₹349 · Amazon India · Tackles acne, dark spots, oiliness simultaneously · Use from Day 1</div></div></div>
+    <div class="prod-item"><span class="ppri pp-next">Buy next</span><div><div class="prod-name">Non-comedogenic moisturiser</div><div class="prod-note">Neutrogena Hydro Boost or Minimalist Squalane · ₹400–700 · Won't clog pores</div></div></div>
+    <div class="prod-item"><span class="ppri pp-next">Buy next</span><div><div class="prod-name">Minimalist Retinol 0.2%</div><div class="prod-note">₹399 · Start Week 5 · Night only, 2×/week · Speeds scar healing + improves skin texture</div></div></div>
+    <div class="prod-item"><span class="ppri pp-later">Month 4</span><div><div class="prod-name">Minimalist Alpha Arbutin 2% + HA</div><div class="prod-note">₹319 · Powerful pigmentation fader for acne scars · AM routine after face wash</div></div></div>
+    <div class="prod-item"><span class="ppri pp-later">Month 4</span><div><div class="prod-name">Minimalist Caffeine Solution 5%</div><div class="prod-note">₹349 · For dark circles — reduces puffiness and shadow effect · Pat under eyes in morning</div></div></div>
+    <div class="prod-item"><span class="ppri pp-later">Month 7</span><div><div class="prod-name">Vitamin C serum 10%</div><div class="prod-note">Minimalist or Mamaearth · ₹300–500 · Brightening + scar fading accelerator · Apply before niacinamide in AM</div></div></div>
+    <div class="prod-item"><span class="ppri pp-have">Have it</span><div><div class="prod-name">SPF 50 sunscreen</div><div class="prod-note">Use every morning without fail · UV is the single biggest cause of marks and scars darkening</div></div></div>
+  </div>
+</div>
 </section>
 
 <!-- HAIR -->
 <section id="hair">
-  <div class="fade-in">
-    <div class="section-label">Hair</div>
-    <div class="section-title">Work with the waves</div>
-    <div class="section-sub">Wavy hair is dry by nature — the natural oils from your scalp can't travel down the wave pattern easily. Everything that causes frizz comes from dryness. Fix the dryness, the waves define themselves.</div>
-
-    <div class="routine-grid">
-      <div class="routine-card">
-        <div class="rc-head">
-          <div class="rc-title">Wash days (3×/week max)</div>
-          <div class="rc-sub">Never wash daily — strips natural oils</div>
-        </div>
-        <div class="rc-body">
-          <div class="rc-row"><span class="rc-time">Step 1</span><div><strong>Sulfate-free shampoo</strong> — massage scalp only, not lengths</div></div>
-          <div class="rc-row"><span class="rc-time">Step 2</span><div><strong>Conditioner</strong> — mid-lengths to ends only · Leave 2–3 min · Rinse with cool water (seals cuticle = less frizz)</div></div>
-          <div class="rc-row"><span class="rc-time">Step 3</span><div><strong>Scrunch upward</strong> with old T-shirt or microfiber towel · Never rub with regular towel</div></div>
-          <div class="rc-row"><span class="rc-time">Step 4</span><div><strong>Leave-in conditioner</strong> while hair is still wet · Scrunch upward · Air dry only — never blow dry without diffuser</div></div>
-          <div class="rc-row"><span class="rc-time">Step 5</span><div><strong>Don't touch</strong> while drying · Once dry, scrunch to break cast if you used gel</div></div>
-        </div>
-      </div>
-      <div class="routine-card">
-        <div class="rc-head">
-          <div class="rc-title">Non-wash days</div>
-          <div class="rc-sub">Co-wash or just water refresh</div>
-        </div>
-        <div class="rc-body">
-          <div class="rc-row"><span class="rc-time">Option 1</span><div><strong>Co-wash</strong> — conditioner only wash, no shampoo · Cleanses without stripping</div></div>
-          <div class="rc-row"><span class="rc-time">Option 2</span><div><strong>Water refresh</strong> — wet hands, scrunch water into hair · Apply small amount leave-in · Scrunch and air dry</div></div>
-          <div class="rc-row"><span class="rc-time">Comb</span><div>Wide-tooth comb only · Only when wet with conditioner · Never brush dry hair</div></div>
-          <div class="rc-row"><span class="rc-time">Oil</span><div>1–2 drops argan or coconut oil on ends only (not scalp) · Seals moisture in</div></div>
-        </div>
+<div class="wrap fade">
+  <div class="s-label">Hair</div>
+  <div class="s-title">Work with the waves</div>
+  <div class="s-sub">Wavy hair is dry by nature — oils can't travel down the wave pattern easily. Everything that causes frizz comes from dryness. Fix the moisture and the waves define themselves.</div>
+  <div class="routine-grid">
+    <div class="rc">
+      <div class="rc-head"><div class="rc-title">Wash days (3×/week)</div><div class="rc-sub">Never shampoo daily — strips natural oils</div></div>
+      <div class="rc-body">
+        <div class="rc-row"><span class="rc-t">Step 1</span><div><strong>Sulfate-free shampoo</strong> — scalp only, not the lengths</div></div>
+        <div class="rc-row"><span class="rc-t">Step 2</span><div><strong>Conditioner</strong> — mid-lengths to ends · 2–3 min · Rinse with cool water only</div></div>
+        <div class="rc-row"><span class="rc-t">Step 3</span><div><strong>Scrunch upward</strong> with old T-shirt or microfiber towel · Never regular towel</div></div>
+        <div class="rc-row"><span class="rc-t">Step 4</span><div><strong>Leave-in conditioner</strong> while still wet · Scrunch up · Air dry · Don't touch while drying</div></div>
       </div>
     </div>
-
-    <div style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:1rem">Products to buy</div>
-    <div class="product-list">
-      <div class="product-item">
-        <span class="product-priority p-now">Buy now</span>
-        <div>
-          <div class="product-name">Sulfate-free shampoo</div>
-          <div class="product-note">WOW Apple Cider Vinegar or Mamaearth Onion (sulfate-free) · ₹250–400 · Available at pharmacies in Dehradun</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-now">Buy now</span>
-        <div>
-          <div class="product-name">Conditioner</div>
-          <div class="product-note">WOW Coconut Milk or Dove Intense Repair · ₹150–300 · Non-negotiable for wavy hair</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-next">Buy next</span>
-        <div>
-          <div class="product-name">Leave-in conditioner or hair cream</div>
-          <div class="product-note">Mamaearth CURLdefine or Garnier Fructis Leave-in · ₹200–350 · Apply wet, scrunch up, air dry</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-next">Buy next</span>
-        <div>
-          <div class="product-name">Wide-tooth comb</div>
-          <div class="product-note">₹50–100 at any pharmacy · The only comb to use on wavy hair</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-later">Helpful</span>
-        <div>
-          <div class="product-name">Microfiber hair towel</div>
-          <div class="product-note">₹150–250 online · Reduces frizz significantly vs regular terry cloth towels</div>
-        </div>
-      </div>
-      <div class="product-item">
-        <span class="product-priority p-later">Optional</span>
-        <div>
-          <div class="product-name">Lightweight argan oil</div>
-          <div class="product-note">WOW Argan Oil or pure coconut oil · ₹200–400 · 1–2 drops on damp ends only</div>
-        </div>
+    <div class="rc">
+      <div class="rc-head"><div class="rc-title">Non-wash days</div><div class="rc-sub">Co-wash or water refresh</div></div>
+      <div class="rc-body">
+        <div class="rc-row"><span class="rc-t">Option 1</span><div><strong>Co-wash</strong> — conditioner only, no shampoo · Cleanses without stripping</div></div>
+        <div class="rc-row"><span class="rc-t">Option 2</span><div><strong>Water refresh</strong> — wet hands, scrunch into hair · Apply small leave-in · Air dry</div></div>
+        <div class="rc-row"><span class="rc-t">Comb</span><div>Wide-tooth only · Wet hair with conditioner in only · Never brush dry</div></div>
+        <div class="rc-row"><span class="rc-t">Oil</span><div>1–2 drops argan or coconut on ends only · Not scalp · Seals moisture</div></div>
       </div>
     </div>
-
-    <div class="note-box" style="margin-top:1.5rem">Barber tip: ask for a "textured top, shorter sides" cut. This shape uses your natural wave as a feature — not something to fight. Dense wavy hair with this cut looks intentional and sharp.</div>
   </div>
+  <div class="prod-list">
+    <div class="prod-item"><span class="ppri pp-now">Buy now</span><div><div class="prod-name">Sulfate-free shampoo</div><div class="prod-note">WOW Apple Cider Vinegar or Mamaearth Onion (sulfate-free) · ₹250–400 · Available in Dehradun</div></div></div>
+    <div class="prod-item"><span class="ppri pp-now">Buy now</span><div><div class="prod-name">Conditioner</div><div class="prod-note">WOW Coconut Milk or Dove Intense Repair · ₹150–300 · Non-negotiable for wavy hair</div></div></div>
+    <div class="prod-item"><span class="ppri pp-next">Buy next</span><div><div class="prod-name">Leave-in conditioner</div><div class="prod-note">Mamaearth CURLdefine or Garnier Fructis Leave-in · ₹200–350 · Apply wet, scrunch up, air dry</div></div></div>
+    <div class="prod-item"><span class="ppri pp-next">Buy next</span><div><div class="prod-name">Wide-tooth comb</div><div class="prod-note">₹50–100 at any pharmacy · The only comb for wavy hair</div></div></div>
+    <div class="prod-item"><span class="ppri pp-later">Helpful</span><div><div class="prod-name">Microfiber hair towel</div><div class="prod-note">₹150–250 online · Reduces frizz significantly vs regular towels</div></div></div>
+  </div>
+  <div class="box-note" style="margin-top:1.5rem">Barber tip: ask for "textured top, shorter sides" cut. This shape uses your natural wave as a feature — not something to fight against. Dense wavy hair with this cut looks intentional and sharp.</div>
+</div>
 </section>
 
 <!-- TIMELINE -->
 <section id="timeline">
-  <div class="fade-in">
-    <div class="section-label">What to expect</div>
-    <div class="section-title">Month by month</div>
-    <div class="section-sub">Realistic milestones. Don't compare week 2 to week 12. Compare week 12 to day 1.</div>
-
-    <div class="timeline">
-      <div class="tl-item">
-        <div class="tl-phase">Month 1–2 · Phase 1 + early Phase 2</div>
-        <div class="tl-title">Foundation sets in</div>
-        <div class="tl-list">
-          <div class="tl-row"><span class="tl-cat">Body</span><div>Strength increases fast (neurological adaptation) · OHP and row weights go up every week · Forearm pump starts after sessions</div></div>
-          <div class="tl-row"><span class="tl-cat">Face</span><div>Active acne reduces noticeably with consistent niacinamide + cleansing · Don't expect scar fading yet</div></div>
-          <div class="tl-row"><span class="tl-cat">Hair</span><div>Frizz reduces in 2–3 washes after switching to sulfate-free + leave-in · Waves start defining</div></div>
-          <div class="tl-row"><span class="tl-cat">HSPU</span><div>Wall hold stable at 20–30s · Pike push-ups reach 3×10 · First wall negatives attempted</div></div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-phase">Month 3–4 · Phase 2 + Phase 3</div>
-        <div class="tl-title">Visible changes begin</div>
-        <div class="tl-list">
-          <div class="tl-row"><span class="tl-cat">Body</span><div>Arm and shoulder size visibly different · Clothes fit differently in the shoulder area · Forearm pump visible during training</div></div>
-          <div class="tl-row"><span class="tl-cat">Face</span><div>Acne scars 50% lighter with retinol + niacinamide · Face fresher overall · Dark circles visibly reduced</div></div>
-          <div class="tl-row"><span class="tl-cat">Jaw</span><div>Slight jaw improvement from mewing + reduced sodium · Face puffiness reduced</div></div>
-          <div class="tl-row"><span class="tl-cat">HSPU</span><div>Controlled negatives at 5–8s · Elevated pike push-ups at 3×10 · Wall hold at 60s</div></div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-phase">Month 5–6 · Late Phase 3</div>
-        <div class="tl-title">The shift happens</div>
-        <div class="tl-list">
-          <div class="tl-row"><span class="tl-cat">Body</span><div>Forearm veins visible at rest · Frame looks broader from front · People who know you notice</div></div>
-          <div class="tl-row"><span class="tl-cat">Face</span><div>Skin largely clear · Scars 70–80% faded · Jaw angle more defined from body fat redistribution</div></div>
-          <div class="tl-row"><span class="tl-cat">HSPU</span><div>Partial wall HSPU (1/2 to 3/4 range) · OHP has gone up significantly · Shoulder stability solid</div></div>
-        </div>
-      </div>
-      <div class="tl-item">
-        <div class="tl-phase">Month 9–12 · Phase 4 + beyond</div>
-        <div class="tl-title">Target physique achieved</div>
-        <div class="tl-list">
-          <div class="tl-row"><span class="tl-cat">Body</span><div>Kole404 frame — broad shoulders, thick arms, defined forearms, lean without being shredded</div></div>
-          <div class="tl-row"><span class="tl-cat">Face</span><div>Scars nearly gone · Dark circles managed · Jaw visibly sharper · Skin clean and clear</div></div>
-          <div class="tl-row"><span class="tl-cat">Hair</span><div>Routine is 3 minutes after shower · Waves defined and controlled</div></div>
-          <div class="tl-row"><span class="tl-cat">HSPU</span><div>Full wall handstand push-up with consistent daily practice</div></div>
-        </div>
+<div class="wrap fade">
+  <div class="s-label">What to expect</div>
+  <div class="s-title">Month by month</div>
+  <div class="s-sub">Realistic milestones. Don't compare week 4 to week 48. Compare month 12 to day 1.</div>
+  <div class="tl">
+    <div class="tl-item">
+      <div class="tl-phase">Month 1–3 · Phase 1</div>
+      <div class="tl-title">Foundation sets in</div>
+      <div class="tl-rows">
+        <div class="tl-row"><span class="tl-cat">Body</span><div>Strength increases fast (neurological) · Every lift goes up weekly · Forearm pump starts after sessions</div></div>
+        <div class="tl-row"><span class="tl-cat">Face</span><div>Active acne reduces in 4–6 weeks · Frizz reduces after 2–3 washes on new routine</div></div>
+        <div class="tl-row"><span class="tl-cat">Hair</span><div>Waves start defining — frizz largely gone by month 2</div></div>
+        <div class="tl-row"><span class="tl-cat">HSPU</span><div>Wall hold stable · Pike push-ups mastered · First negatives attempted</div></div>
       </div>
     </div>
-
-    <div class="accent-box" style="margin-top:2rem">
-      <strong>The one thing that kills all progress:</strong> inconsistency. Doing everything for 2 weeks then stopping for 1 = near-zero net progress. A 40-min session 4×/week + hitting protein daily + basic skincare = massive change over 9 months. The plan doesn't need to be perfect. It needs to happen.
+    <div class="tl-item">
+      <div class="tl-phase">Month 4–6 · Phase 2</div>
+      <div class="tl-title">Visible changes begin</div>
+      <div class="tl-rows">
+        <div class="tl-row"><span class="tl-cat">Body</span><div>Arms and shoulders visibly different · Clothes fit differently · Forearm veins during training</div></div>
+        <div class="tl-row"><span class="tl-cat">Face</span><div>Scars 50–60% lighter · Face noticeably less puffy · Dark circles reduced</div></div>
+        <div class="tl-row"><span class="tl-cat">Jaw</span><div>Mewing + sodium reduction showing on face shape</div></div>
+        <div class="tl-row"><span class="tl-cat">HSPU</span><div>Partial HSPU happening · Wall hold at 45s+ · Half-range reps</div></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-phase">Month 7–9 · Phase 3</div>
+      <div class="tl-title">The shift — people notice</div>
+      <div class="tl-rows">
+        <div class="tl-row"><span class="tl-cat">Body</span><div>Forearm veins visible at rest · Frame looks broader · You look like you train</div></div>
+        <div class="tl-row"><span class="tl-cat">Face</span><div>Skin largely clear · Scars 75–85% gone · Jaw sharper from body recomposition</div></div>
+        <div class="tl-row"><span class="tl-cat">HSPU</span><div>First full wall HSPU achieved · Building to 5+ reps · Freestanding attempts begin</div></div>
+      </div>
+    </div>
+    <div class="tl-item">
+      <div class="tl-phase">Month 10–12 · Phase 4</div>
+      <div class="tl-title">Target physique achieved</div>
+      <div class="tl-rows">
+        <div class="tl-row"><span class="tl-cat">Body</span><div>Kole404 frame — broad shoulders, thick arms, vascular forearms, lean and strong</div></div>
+        <div class="tl-row"><span class="tl-cat">Face</span><div>Scars nearly gone · Dark circles managed · Jaw visibly defined · Skin clear in maintenance</div></div>
+        <div class="tl-row"><span class="tl-cat">Hair</span><div>3-minute routine after shower · Waves defined and intentional-looking</div></div>
+        <div class="tl-row"><span class="tl-cat">HSPU</span><div>10+ wall HSPU reps · Freestanding handstand hold happening · Freestanding HSPU close</div></div>
+      </div>
     </div>
   </div>
+  <div class="box-accent" style="margin-top:2rem">The one thing that kills all progress: inconsistency. Doing everything for 2 weeks then stopping for 1 = near-zero net progress over the year. A 45-min session 4–5×/week + hitting protein daily + basic skincare = total transformation in 12 months. The plan does not need to be perfect. It needs to happen.</div>
+</div>
 </section>
 
 <footer>
-  built for <span>you</span> · 12 weeks · dehradun, india · stay consistent
+  <div class="footer-l">built for <span>you</span> · 12 months · dehradun, india</div>
+  <div class="footer-r">TP</div>
 </footer>
 
 <script>
-function showPhase(id) {
-  document.querySelectorAll('.phase-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+function showPhase(id,btn){
+  document.querySelectorAll('.pp').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.ptab').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  event.target.classList.add('active');
+  btn.classList.add('active');
 }
-
-function toggleDay(header) {
-  const body = header.nextElementSibling;
-  const chev = header.querySelector('.chevron');
-  const open = body.classList.toggle('open');
-  chev.classList.toggle('open', open);
+function toggleMonth(hd){
+  const body=hd.nextElementSibling;
+  const chev=hd.querySelector('.chev');
+  const open=body.classList.toggle('open');
+  chev.classList.toggle('open',open);
 }
-
-function toggleProblem(header) {
-  const body = header.nextElementSibling;
-  const chev = header.querySelector('.chevron');
-  const open = body.classList.toggle('open');
-  chev.classList.toggle('open', open);
+function showWeek(month,week,btn){
+  const prefix=month+'-';
+  document.querySelectorAll('[id^="'+prefix+'"]').forEach(p=>p.classList.remove('active'));
+  const container=btn.closest('.month-body');
+  container.querySelectorAll('.wtab').forEach(b=>b.classList.remove('active'));
+  document.getElementById(month+'-'+week).classList.add('active');
+  btn.classList.add('active');
 }
-
-const nav = document.getElementById('main-nav');
-const navLinks = nav.querySelectorAll('a');
-const sections = document.querySelectorAll('section[id]');
-
-function updateNav() {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY + 120 >= s.offsetTop) current = s.id;
-  });
-  navLinks.forEach(a => {
-    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-  });
+function toggleDay(hd){
+  const body=hd.nextElementSibling;
+  const chev=hd.querySelector('.chev');
+  const open=body.classList.toggle('open');
+  chev.classList.toggle('open',open);
 }
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) e.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-window.addEventListener('scroll', updateNav);
+function toggleProb(hd){
+  const body=hd.nextElementSibling;
+  const chev=hd.querySelector('.chev');
+  const open=body.classList.toggle('open');
+  chev.classList.toggle('open',open);
+}
+const navLinks=document.querySelectorAll('.nav a');
+const sections=document.querySelectorAll('section[id]');
+function updateNav(){
+  let cur='';
+  sections.forEach(s=>{if(window.scrollY+130>=s.offsetTop)cur=s.id});
+  navLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur));
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')});
+},{threshold:0.08});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+window.addEventListener('scroll',updateNav,{passive:true});
 updateNav();
 </script>
 </body>
